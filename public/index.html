@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jayson Tolentino — GoHighLevel & AI Automation Specialist</title>
+<meta name="description" content="GoHighLevel CRM systems, AI conversation bots, and automation workflows for clinics, law firms, and real estate agencies." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B0E14;
+    --surface: #12161F;
+    --surface2: #171C27;
+    --border: #232937;
+    --text: #EDEAE3;
+    --text-muted: #A39C8E;
+    --text-dim: #6B7280;
+    --accent: #E8A33D;
+    --accent-dim: rgba(232,163,61,0.14);
+    --accent-line: rgba(232,163,61,0.4);
+    --teal: #5EC8C0;
+    --teal-dim: rgba(94,200,192,0.12);
+    --radius: 10px;
+    --maxw: 1120px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  a { color: inherit; text-decoration: none; }
+  img, video { max-width: 100%; display: block; }
+  section { padding: 96px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+  .eyebrow { color: var(--text-dim); font-size: 13px; margin-bottom: 14px; }
+  p.lede { color: var(--text-muted); font-size: 17px; max-width: 62ch; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #0B0E14; font-weight: 700;
+    padding: 13px 26px; border-radius: 8px; font-size: 15px;
+    border: none; cursor: pointer;
+  }
+  .btn:hover { opacity: 0.92; }
+  .btn.ghost {
+    background: transparent; color: var(--text); border: 1px solid var(--border);
+    font-weight: 600;
+  }
+  .btn.ghost:hover { border-color: var(--accent-line); }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11,14,20,0.88); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+  .logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 32px; }
+  nav ul a { font-size: 14px; color: var(--text-muted); }
+  nav ul a:hover { color: var(--text); }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  @media (max-width: 760px) { nav ul { display: none; } }
+
+  /* HERO */
+  .hero { padding: 90px 0 96px; border-bottom: 1px solid var(--border); }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero h1 { font-size: 44px; margin-bottom: 22px; }
+  @media (max-width: 560px) { .hero h1 { font-size: 32px; } }
+  .hero-cta { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+  .badges { display: flex; gap: 10px; margin-top: 36px; flex-wrap: wrap; }
+  .badge {
+    border: 1px solid var(--border); border-radius: 20px; padding: 7px 14px;
+    font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+  .flow-graphic { width: 100%; }
+  .flow-graphic svg { width: 100%; height: auto; }
+  .flow-path {
+    stroke-dasharray: 900; stroke-dashoffset: 900;
+    animation: draw 2.2s ease-out forwards 0.3s;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .flow-node circle { fill: var(--surface2); stroke: var(--border); stroke-width: 1.5; }
+  .flow-node.active circle { stroke: var(--accent); }
+  .flow-node text { fill: var(--text-muted); font-family: 'Manrope', sans-serif; font-size: 12px; }
+  @media (prefers-reduced-motion: reduce) {
+    .flow-path { animation: none; stroke-dashoffset: 0; }
+  }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-grid h2 { font-size: 30px; margin-bottom: 20px; }
+  .about-grid p { color: var(--text-muted); margin-bottom: 16px; max-width: 62ch; }
+  .fact-list { display: flex; flex-direction: column; gap: 0; }
+  .fact-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .fact-row:last-child { border-bottom: none; }
+  .fact-row .k { color: var(--text-dim); }
+  .fact-row .v { color: var(--text); text-align: right; font-weight: 600; }
+
+  /* SERVICES */
+  .section-head { max-width: 62ch; margin-bottom: 48px; }
+  .section-head h2 { font-size: 30px; margin-bottom: 12px; }
+  .services-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  @media (max-width: 760px) { .services-list { grid-template-columns: 1fr; } }
+  .service-item { background: var(--bg); padding: 30px; }
+  .service-item .icon { width: 34px; height: 34px; margin-bottom: 16px; }
+  .service-item h3 { font-size: 17px; margin-bottom: 8px; }
+  .service-item p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 14px; }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag { font-size: 12px; color: var(--teal); background: var(--teal-dim); padding: 4px 10px; border-radius: 20px; }
+
+  /* PROOF / VIDEO */
+  .proof { background: var(--surface); }
+  .proof-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+  @media (max-width: 880px) { .proof-grid { grid-template-columns: 1fr; } }
+  .proof h2 { font-size: 30px; margin-bottom: 16px; }
+  .proof p { color: var(--text-muted); margin-bottom: 12px; }
+  .video-frame {
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+    background: #000; aspect-ratio: 9 / 16; max-width: 320px; margin: 0 auto;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .video-frame video { width: 100%; height: 100%; object-fit: cover; }
+
+  /* TOOLS */
+  .tools-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tool-pill {
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 16px;
+    font-size: 14px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
+  }
+  .tool-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
+
+  /* JOURNEY */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .tl-item { position: relative; padding-bottom: 44px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -28px; top: 4px; width: 11px; height: 11px;
+    border-radius: 50%; background: var(--bg); border: 2px solid var(--accent);
+  }
+  .tl-item .period { color: var(--text-dim); font-size: 13px; margin-bottom: 4px; }
+  .tl-item h3 { font-size: 18px; margin-bottom: 2px; }
+  .tl-item .org { color: var(--accent); font-size: 14px; margin-bottom: 12px; }
+  .tl-item ul { color: var(--text-muted); font-size: 14.5px; padding-left: 18px; }
+  .tl-item li { margin-bottom: 4px; }
+
+  /* PORTFOLIO */
+  .proj-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .proj-item { background: var(--bg); padding: 28px 30px; display: flex; gap: 26px; }
+  @media (max-width: 760px) { .proj-item { flex-direction: column; } }
+  .proj-media { width: 220px; flex-shrink: 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); align-self: flex-start; }
+  .proj-media img { width: 100%; display: block; }
+  @media (max-width: 760px) { .proj-media { width: 100%; } }
+  .proj-body { flex: 1; min-width: 0; }
+  .proj-item h3 { font-size: 16.5px; margin-bottom: 8px; }
+  .proj-item .stack { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .proj-item .stack span { font-size: 11.5px; color: var(--text-dim); border: 1px solid var(--border); padding: 3px 8px; border-radius: 12px; }
+  .proj-item p { color: var(--text-muted); font-size: 14.5px; }
+  .proj-item .solve { color: var(--text); font-size: 13.5px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .proj-item .solve b { color: var(--accent); font-weight: 600; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact h2 { font-size: 32px; margin-bottom: 16px; }
+  .contact p { color: var(--text-muted); margin-bottom: 24px; max-width: 50ch; }
+  .contact-info { display: flex; flex-direction: column; gap: 14px; }
+  .contact-info a, .contact-info div { font-size: 15px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+  .contact-info a:hover { color: var(--text); }
+  .booking-embed {
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
+    background: var(--surface); text-align: center;
+  }
+  .booking-embed p { color: var(--text-dim); font-size: 13px; margin-top: 14px; }
+
+  footer { padding: 32px 0; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer p { color: var(--text-dim); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">JAYSON<span>.</span>AUTOMATION</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </ul>
+      <a href="#contact" class="btn">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Leads don't wait for business hours. Neither should your follow-up.</h1>
+      <p class="lede">I build GoHighLevel CRM systems, AI conversation bots, and automation workflows for clinics, law firms, and real estate agencies — so no inquiry goes unanswered, day or night.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Book a Free Discovery Call</a>
+        <a href="#services" class="btn ghost">See what I build</a>
+      </div>
+      <div class="badges">
+        <div class="badge"><span class="dot"></span>5+ years in tech</div>
+        <div class="badge"><span class="dot"></span>Australia-focused, global ready</div>
+      </div>
+    </div>
+    <div class="flow-graphic">
+      <svg viewBox="0 0 360 260" fill="none">
+        <path class="flow-path" d="M40 40 C 140 40, 100 130, 180 130 C 260 130, 220 220, 320 220" stroke="#E8A33D" stroke-width="2"/>
+        <g class="flow-node active"><circle cx="40" cy="40" r="22"/><text x="40" y="45" text-anchor="middle">Inquiry</text></g>
+        <g class="flow-node"><circle cx="180" cy="130" r="22"/><text x="180" y="135" text-anchor="middle">Qualify</text></g>
+        <g class="flow-node"><circle cx="320" cy="220" r="22"/><text x="320" y="225" text-anchor="middle">Booked</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>The specialist behind your automation stack</h2>
+      <p>I'm Jayson Tolentino — a GoHighLevel CRM and automation specialist who bridges the gap between complex marketing systems and real business results. I don't just set up software; I build systems designed to run reliably, day after day, without someone checking on them.</p>
+      <p>My background is in enterprise IT, not marketing — over 4 years supporting international regions at DXC Technology, followed by a senior analyst role in enterprise infrastructure. That means every automation I build gets an engineer's attention to what happens when something goes wrong, not just when everything works.</p>
+      <p>Today, I help clinics, law firms, and real estate agencies escape the chaos of manual follow-up by building structured CRM systems, AI-powered conversation bots, and lead capture funnels that respond the moment someone reaches out — not the next morning.</p>
+    </div>
+    <div>
+      <img src="assets/headshot.jpg" alt="Jayson Tolentino" style="width:100%; border-radius:12px; border:1px solid var(--border); margin-bottom:24px;" />
+    <div class="fact-list">
+      <div class="fact-row"><span class="k">Primary Platform</span><span class="v">GoHighLevel (GHL)</span></div>
+      <div class="fact-row"><span class="k">Currently Serving</span><span class="v">Australia, expanding to US</span></div>
+      <div class="fact-row"><span class="k">Specialty</span><span class="v">Lead Response & AI Automation</span></div>
+      <div class="fact-row"><span class="k">Background</span><span class="v">Senior IT / Enterprise Ops</span></div>
+      <div class="fact-row"><span class="k">Based In</span><span class="v">Philippines — Remote</span></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Services built to answer for you</h2>
+      <p class="lede">Every service is designed to close the same gap: the time between someone reaching out and someone responding.</p>
+    </div>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>CRM System Setup</h3>
+        <p>Full GoHighLevel builds — pipelines, contacts, tags, and workflows that turn your database into something that actually works for you.</p>
+        <div class="tag-row"><span class="tag">Pipelines</span><span class="tag">Contact Mgmt</span></div>
+      </div>
+      <div class="service-item">
+        <h3>Conversation AI & Chatbots</h3>
+        <p>WhatsApp, Facebook, and Instagram-integrated AI agents that qualify leads in real time and escalate to a human when it matters.</p>
+        <div class="tag-row"><span class="tag">WhatsApp</span><span class="tag">Meta API</span></div>
+      </div>
+      <div class="service-item">
+        <h3>Workflow Automation</h3>
+        <p>Email, SMS, and voicemail sequences that nurture leads and follow up automatically, without anyone chasing manually.</p>
+        <div class="tag-row"><span class="tag">Email/SMS</span><span class="tag">Triggers</span></div>
+      </div>
+      <div class="service-item">
+        <h3>Funnel Building</h3>
+        <p>Landing pages and booking flows that guide a prospect from first click to booked appointment, automatically.</p>
+        <div class="tag-row"><span class="tag">Landing Pages</span><span class="tag">Booking</span></div>
+      </div>
+      <div class="service-item">
+        <h3>Integrations & API</h3>
+        <p>Connecting your tech stack — Twilio, Mailgun, Stripe, and beyond — into one system that talks to itself.</p>
+        <div class="tag-row"><span class="tag">Twilio</span><span class="tag">Stripe</span></div>
+      </div>
+      <div class="service-item">
+        <h3>SaaS Mode & White Label</h3>
+        <p>For agencies: full GoHighLevel SaaS mode setup, sub-account management, and reseller pricing configuration.</p>
+        <div class="tag-row"><span class="tag">SaaS Mode</span><span class="tag">Agency</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap proof-grid">
+    <div class="video-frame">
+      <video controls playsinline preload="metadata">
+        <source src="assets/demo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div>
+      <h2>See it in action</h2>
+      <p>A clinic was losing leads every night after hours — no one responded until morning, and by then, half had already booked somewhere else.</p>
+      <p>I built them a Conversation AI bot inside GoHighLevel that answers instantly, walks the lead through their actual services and packages, and books the appointment directly — no human needed until it's time to confirm.</p>
+      <a href="#contact" class="btn" style="margin-top: 12px;">Get this for your business</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Tech stack</h2>
+      <p class="lede">The tools I build with, end to end — from CRM to cloud infrastructure.</p>
+    </div>
+    <div class="tools-cloud">
+      <div class="tool-pill"><span class="dot"></span>GoHighLevel</div>
+      <div class="tool-pill"><span class="dot"></span>n8n</div>
+      <div class="tool-pill"><span class="dot"></span>Zapier</div>
+      <div class="tool-pill"><span class="dot"></span>Twilio</div>
+      <div class="tool-pill"><span class="dot"></span>Mailgun</div>
+      <div class="tool-pill"><span class="dot"></span>Stripe</div>
+      <div class="tool-pill"><span class="dot"></span>Meta / WhatsApp Business API</div>
+      <div class="tool-pill"><span class="dot"></span>Microsoft Azure</div>
+      <div class="tool-pill"><span class="dot"></span>Microsoft 365 / Entra ID</div>
+      <div class="tool-pill"><span class="dot"></span>Intune</div>
+      <div class="tool-pill"><span class="dot"></span>Calendly</div>
+      <div class="tool-pill"><span class="dot"></span>Webhooks / API</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Journey</h2>
+      <p class="lede">From enterprise IT support to full-stack automation.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="period">Nov 2025 — Present</div>
+        <h3>GoHighLevel Automation Specialist</h3>
+        <div class="org">Freelance</div>
+        <ul>
+          <li>Implement CRM and automation systems using GoHighLevel</li>
+          <li>Build lead generation funnels and AI-powered conversation bots</li>
+          <li>Configure pipelines, SaaS mode, and CRM lead management systems</li>
+          <li>Integrate third-party tools including Twilio, Mailgun, Stripe, and Zapier</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="period">May 2025 — June 30, 2026</div>
+        <h3>Senior IT Analyst</h3>
+        <div class="org">Microsourcing</div>
+        <ul>
+          <li>Senior escalation point for complex hardware, software, network, and cloud issues</li>
+          <li>Administered and optimized Microsoft 365 and Azure AD (Entra ID)</li>
+          <li>Managed Intune, Conditional Access, and MFA configurations</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="period">Aug 2021 — Nov 2025</div>
+        <h3>Specialized IT Service Desk</h3>
+        <div class="org">DXC Technology</div>
+        <ul>
+          <li>Advanced IT troubleshooting and technical support across APJ, EMEA, and AMS regions</li>
+          <li>Diagnosed and resolved complex software, hardware, and network issues</li>
+          <li>Built cross-regional reputation for reliability and technical depth</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Systems I've built</h2>
+      <p class="lede">Automation workflows built to eliminate manual work — each one designed to run without supervision.</p>
+    </div>
+    <div class="proj-list">
+      <div class="proj-item">
+        <div class="proj-media"><img src="assets/proj-leadgen.png" alt="Lead Generation Portfolio System workflow" /></div>
+        <div class="proj-body">
+          <h3>Lead Generation Portfolio System</h3>
+          <div class="stack"><span>n8n</span><span>Webhook</span><span>Gmail</span><span>Sheets</span></div>
+          <p>Automated end-to-end lead capture pipeline — webhook triggers instant data capture, appends to a sheet, and sends personalized emails to both the lead and the owner.</p>
+          <div class="solve"><b>What it solves:</b> nothing gets missed between form submission and first response.</div>
+        </div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-media"><img src="assets/proj-qualification.png" alt="Lead Qualification and Tagging System workflow" /></div>
+        <div class="proj-body">
+          <h3>Lead Qualification &amp; Tagging System</h3>
+          <div class="stack"><span>n8n</span><span>Hot/Cold Logic</span><span>Dedup</span></div>
+          <p>Qualification engine with hot/cold lead branching, duplicate detection, owner notifications, and timed follow-ups — fully automated from first touch to close.</p>
+          <div class="solve"><b>What it solves:</b> no lead gets chased twice, and none get ignored.</div>
+        </div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-media"><img src="assets/proj-nurture.png" alt="Advanced Lead Nurturing System workflow" /></div>
+        <div class="proj-body">
+          <h3>Advanced Lead Nurturing System</h3>
+          <div class="stack"><span>GoHighLevel</span><span>Email + SMS</span><span>Branching</span></div>
+          <p>Multi-branch real estate nurture workflow with reply detection, pipeline stage automation, and persistent re-engagement sequences for cold leads.</p>
+          <div class="solve"><b>What it solves:</b> leads that go quiet still get worked, automatically, over weeks.</div>
+        </div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-media"><img src="assets/proj-gym.png" alt="Local Gym Lead Follow-Up System workflow" /></div>
+        <div class="proj-body">
+          <h3>Local Gym Lead Follow-Up System</h3>
+          <div class="stack"><span>GoHighLevel</span><span>Drip Sequence</span><span>Tags</span></div>
+          <p>Form-triggered contact creation, tagging, and a 3-email drip sequence with strategic wait intervals — built to convert trial sign-ups into paying members.</p>
+          <div class="solve"><b>What it solves:</b> trial leads get nurtured without anyone remembering to follow up.</div>
+        </div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-media"><img src="assets/proj-jobscrapper.png" alt="AI Job Scrapper and Resume Optimizer workflow" /></div>
+        <div class="proj-body">
+          <h3>AI Job Scrapper &amp; Resume Optimizer</h3>
+          <div class="stack"><span>n8n</span><span>AI Agent</span><span>Slack</span><span>Google Drive</span></div>
+          <p>Slack-triggered AI pipeline that scrapes live job listings, validates each one, tailors a resume per role using an AI agent, then drafts the application ready to send.</p>
+          <div class="solve"><b>What it solves:</b> job hunting or outbound targeting at scale without doing it manually, role by role.</div>
+        </div>
+      </div>
+      <div class="proj-item">
+        <div class="proj-media"><img src="assets/proj-feedback.png" alt="Smart Feedback and Review Automation workflow" /></div>
+        <div class="proj-body">
+          <h3>Smart Feedback &amp; Review Automation</h3>
+          <div class="stack"><span>n8n</span><span>Webhook</span><span>Switch Logic</span></div>
+          <p>Customer feedback router — happy customers get a thank-you and review reminder; unhappy customers trigger an apology and an owner alert, all logged automatically.</p>
+          <div class="solve"><b>What it solves:</b> negative feedback gets caught and handled the same day, not weeks later.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact">
+      <h2>Ready to stop losing leads?</h2>
+      <p>Tell me about your business and I'll map out what a system that doesn't drop leads would look like for you — no strings attached.</p>
+      <div class="contact-info">
+        <a href="tel:+639218311945">+63 921 831 1945</a>
+        <a href="mailto:jayson.tolentino1017@gmail.com">jayson.tolentino1017@gmail.com</a>
+        <div>Philippines — Remote, working Australia &amp; US hours</div>
+      </div>
+    </div>
+    <div class="booking-embed">
+      <!-- Calendly booking link -->
+      <a href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener" class="btn" style="width:100%; justify-content:center;">Book a Free 30-Min Discovery Call</a>
+      <p>Opens your Calendly scheduling page</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Jayson Tolentino — GoHighLevel &amp; AI Automation Specialist</p>
+    <p>jayson.tolentino1017@gmail.com · +63 921 831 1945</p>
+  </div>
+</footer>
+
+</body>
+</html>
