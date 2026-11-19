@@ -2,748 +2,756 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jayson Tolentino. GoHighLevel and AI Automation Specialist</title>
-<meta name="description" content="GoHighLevel CRM systems, AI conversation bots, and automation workflows for clinics, law firms, and real estate agencies." />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JT Flowops | Lead follow-up and booking systems by Jayson Tolentino</title>
+<meta name="description" content="GoHighLevel and AI systems that reply to new leads in seconds, follow up automatically and book the call. For dental clinics, law firms and real estate teams." />
+<meta name="theme-color" content="#0B0E14" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="apple-touch-icon" href="assets/logo-square-primary.png" />
-<meta property="og:title" content="Jayson Tolentino. GoHighLevel and AI Automation Specialist" />
-<meta property="og:description" content="GoHighLevel CRM systems, AI conversation bots, and automation workflows for clinics, law firms, and real estate agencies." />
+<meta property="og:title" content="JT Flowops | Lead follow-up and booking systems" />
+<meta property="og:description" content="Systems that reply to new leads in seconds, follow up and book the call. For clinics, law firms and real estate teams." />
 <meta property="og:image" content="assets/logo-square-primary.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
 <style>
+  @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+  @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+  @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+  @font-face { font-family: "Manrope"; src: url("assets/fonts/manrope-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+
+  /* 60-30-10: Midnight Ink 60 / Slate + Cream 30 / JT Orange 10 */
   :root {
-    --bg: #0B0E14;
-    --surface: #12161F;
-    --surface2: #171C27;
-    --border: #232937;
-    --text: #EDEAE3;
-    --text-muted: #A39C8E;
-    --text-dim: #6B7280;
-    --accent: #E8A33D;
-    --accent-dim: rgba(232,163,61,0.14);
-    --accent-line: rgba(232,163,61,0.4);
-    --teal: #5EC8C0;
-    --teal-dim: rgba(94,200,192,0.12);
-    --radius: 10px;
-    --maxw: 1120px;
+    --ink: #0B0E14;
+    --slate: #161B24;
+    --slate-2: #1C2230;
+    --line: rgba(242, 239, 232, 0.09);
+    --line-strong: rgba(242, 239, 232, 0.16);
+    --cream: #F2EFE8;
+    --cream-2: #D9D4CA;
+    --gray: #A39D91;
+    --orange: #EB921A;
+    --orange-soft: rgba(235, 146, 26, 0.12);
+    --teal: #5DC6BE;
+    --teal-soft: rgba(93, 198, 190, 0.12);
+    --r: 14px;
+    --maxw: 1160px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Manrope', -apple-system, sans-serif;
-    font-size: 16px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, .display {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-  }
-  a { color: inherit; text-decoration: none; }
-  img, video { max-width: 100%; display: block; }
-  section { padding: 96px 0; border-bottom: 1px solid var(--border); }
-  section:last-of-type { border-bottom: none; }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
-  .eyebrow { color: var(--text-dim); font-size: 13px; margin-bottom: 14px; }
-  p.lede { color: var(--text-muted); font-size: 17px; max-width: 62ch; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--accent); color: #0B0E14; font-weight: 700;
-    padding: 13px 26px; border-radius: 8px; font-size: 15px;
-    border: none; cursor: pointer;
-  }
-  .btn:hover { opacity: 0.92; }
-  .btn.ghost {
-    background: transparent; color: var(--text); border: 1px solid var(--border);
-    font-weight: 600;
-  }
-  .btn.ghost:hover { border-color: var(--accent-line); }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--orange); color: var(--ink); padding: 10px 16px; border-radius: 8px; font-weight: 700; z-index: 100; }
+  .skip:focus { left: 16px; }
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(11,14,20,0.88); backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-  }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; }
-  .logo img { height: 30px; display: block; }
-  nav ul { list-style: none; display: flex; gap: 32px; }
-  nav ul a { font-size: 14px; color: var(--text-muted); }
-  nav ul a:hover { color: var(--text); }
-  .nav-links { display: flex; align-items: center; gap: 32px; }
-  @media (max-width: 760px) { nav ul { display: none; } }
+  h1, h2, h3 { line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; }
+  h2 { font-size: clamp(30px, 4vw, 44px); max-width: 18ch; }
+  h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+  .hl { color: var(--orange); }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 18px; }
+  .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--line-strong); }
+  .lead { color: var(--cream-2); font-size: 19px; max-width: 58ch; }
+  section { padding: 112px 0; }
+  .sec-head { display: grid; gap: 18px; margin-bottom: 48px; }
 
-  /* HERO */
-  .hero { padding: 90px 0 96px; border-bottom: 1px solid var(--border); }
-  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
-  .hero h1 { font-size: 44px; margin-bottom: 22px; }
-  @media (max-width: 560px) { .hero h1 { font-size: 32px; } }
-  .hero-cta { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
-  .badges { display: flex; gap: 10px; margin-top: 36px; flex-wrap: wrap; }
-  .badge {
-    border: 1px solid var(--border); border-radius: 20px; padding: 7px 14px;
-    font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px;
-  }
-  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: transform .18s ease, background-color .18s ease, border-color .18s ease; }
+  .btn-primary { background: var(--orange); color: var(--ink); }
+  .btn-primary:hover { background: #F4A23A; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--cream); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: var(--cream-2); }
+  .btn svg { width: 18px; height: 18px; }
 
-  .flow-graphic { width: 100%; }
-  .flow-graphic svg { width: 100%; height: auto; }
-  .flow-path {
-    stroke-dasharray: 900; stroke-dashoffset: 900;
-    animation: draw 2.2s ease-out forwards 0.3s;
-  }
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  .flow-node circle { fill: var(--surface2); stroke: var(--border); stroke-width: 1.5; }
-  .flow-node.active circle { stroke: var(--accent); }
-  .flow-node text { fill: var(--text-muted); font-family: 'Manrope', sans-serif; font-size: 12px; }
-  @media (prefers-reduced-motion: reduce) {
-    .flow-path { animation: none; stroke-dashoffset: 0; }
+  /* Nav */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(11, 14, 20, 0.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand img { height: 34px; width: auto; }
+  .nav ul { display: flex; gap: 30px; list-style: none; }
+  .nav ul a { text-decoration: none; color: var(--cream-2); font-weight: 600; font-size: 15px; }
+  .nav ul a:hover { color: var(--cream); }
+  .nav .btn { min-height: 42px; padding: 0 18px; font-size: 15px; }
+  @media (max-width: 900px) { .nav ul { display: none; } }
+
+  /* Hero */
+  .hero { padding: 88px 0 96px; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -20% -10% auto auto; width: 720px; height: 720px; background: radial-gradient(closest-side, rgba(235,146,26,0.10), transparent 70%); pointer-events: none; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; position: relative; }
+  .hero h1 { font-size: clamp(40px, 5.4vw, 62px); max-width: 16ch; }
+  .hero .lead { margin-top: 24px; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .proof-row { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 10px 32px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .proof-row div { font-size: 14px; color: var(--gray); }
+  .proof-row strong { display: block; font-size: 24px; color: var(--cream); font-weight: 800; letter-spacing: -0.01em; }
+
+  .flow { position: relative; display: grid; gap: 14px; }
+  .flow-card { background: var(--slate); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 20px; box-shadow: 0 24px 48px -24px rgba(0,0,0,0.6); }
+  .flow-card:nth-child(2) { margin-left: 34px; }
+  .flow-card:nth-child(3) { margin-left: 68px; }
+  .flow-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--cream-2); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--gray); }
+  .dot.o { background: var(--orange); }
+  .dot.t { background: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
+  .time { font-size: 12px; color: var(--gray); }
+  .bubble { background: var(--slate-2); border-radius: 10px; padding: 10px 14px; font-size: 14px; color: var(--cream-2); }
+  .bubble.me { background: var(--ink); border: 1px solid var(--line); }
+  .booked { color: var(--teal); font-weight: 700; font-size: 15px; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .flow-card:nth-child(2), .flow-card:nth-child(3) { margin-left: 0; }
   }
 
-  /* ABOUT */
-  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
-  @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
-  .about-grid h2 { font-size: 30px; margin-bottom: 20px; }
-  .about-grid p { color: var(--text-muted); margin-bottom: 16px; max-width: 62ch; }
-  .fact-list { display: flex; flex-direction: column; gap: 0; }
-  .fact-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-  .fact-row:last-child { border-bottom: none; }
-  .fact-row .k { color: var(--text-dim); }
-  .fact-row .v { color: var(--text); text-align: right; font-weight: 600; }
+  /* Problems */
+  .problems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .problem { background: var(--slate); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
+  .problem .k { font-size: 13px; font-weight: 700; color: var(--gray); letter-spacing: .08em; text-transform: uppercase; }
+  .problem h3 { margin: 10px 0 10px; }
+  .problem p { color: var(--cream-2); font-size: 16px; }
+  .problem .fix { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; color: var(--cream); }
+  .problem .fix b { color: var(--teal); font-weight: 700; }
 
-  /* SERVICES */
-  .section-head { max-width: 62ch; margin-bottom: 48px; }
-  .section-head h2 { font-size: 30px; margin-bottom: 12px; }
-  .services-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-  @media (max-width: 760px) { .services-list { grid-template-columns: 1fr; } }
-  .service-item { background: var(--bg); padding: 30px; }
-  .service-item .icon { width: 34px; height: 34px; margin-bottom: 16px; }
-  .service-item h3 { font-size: 17px; margin-bottom: 8px; }
-  .service-item p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 14px; }
-  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
-  .tag { font-size: 12px; color: var(--teal); background: var(--teal-dim); padding: 4px 10px; border-radius: 20px; }
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+  .service { background: var(--ink); padding: 32px 28px; }
+  .service:hover { background: var(--slate); }
+  .icon { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; background: var(--slate-2); color: var(--cream); margin-bottom: 20px; }
+  .icon svg { width: 22px; height: 22px; }
+  .service p { color: var(--cream-2); font-size: 16px; margin-top: 8px; }
 
-  /* PROOF / VIDEO */
-  .proof { background: var(--surface); }
-  .proof-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
-  @media (max-width: 880px) { .proof-grid { grid-template-columns: 1fr; } }
-  .proof h2 { font-size: 30px; margin-bottom: 16px; }
-  .proof p { color: var(--text-muted); margin-bottom: 12px; }
-  .video-frame {
-    border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
-    background: #000; aspect-ratio: 9 / 16; max-width: 320px; margin: 0 auto;
-    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
-  }
-  .video-frame video { width: 100%; height: 100%; object-fit: cover; }
+  /* Wins */
+  .wins { display: grid; grid-template-columns: repeat(6, 1fr); gap: 18px; }
+  .win { grid-column: span 2; background: var(--slate); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .win.big { grid-column: span 3; }
+  .win .tag { align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--cream-2); background: var(--slate-2); padding: 6px 10px; border-radius: 999px; }
+  .win p { color: var(--cream-2); font-size: 16px; }
+  .win .result { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; display: flex; gap: 10px; align-items: baseline; }
+  .win .result .dot { flex: none; transform: translateY(-1px); }
 
-  /* TOOLS */
-  .tools-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
-  .tool-pill {
-    border: 1px solid var(--border); border-radius: 8px; padding: 10px 16px;
-    font-size: 14px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
-  }
-  .tool-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
+  /* Builds */
+  .filter { min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--cream-2); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .filter[aria-pressed="true"] { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+  .builds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .build { text-align: left; background: var(--slate); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; cursor: pointer; color: inherit; font: inherit; display: flex; flex-direction: column; transition: border-color .18s ease, transform .18s ease; }
+  .build:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+  .build .shot { aspect-ratio: 16 / 9; background: #0E1219; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .build .shot img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .build.tall .shot { background: #10141C; }
+  .build.tall .shot img { object-fit: cover; object-position: center 22%; filter: invert(0.9) hue-rotate(180deg) brightness(1.05); }
+  .build .cap { padding: 18px 20px 20px; display: grid; gap: 8px; }
+  .build h3 { font-size: 17px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { font-size: 12px; font-weight: 600; color: var(--gray); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; }
+  .pill.plat { color: var(--cream-2); background: var(--slate-2); border-color: transparent; }
+  .build[hidden] { display: none; }
+  .build-cta { border: 1px dashed var(--line-strong); border-radius: var(--r); padding: 28px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  .build-cta p { color: var(--cream-2); font-size: 16px; }
+  .build-cta .btn { align-self: flex-start; }
 
-  /* JOURNEY */
-  .timeline { position: relative; padding-left: 28px; }
-  .timeline::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
-  .tl-item { position: relative; padding-bottom: 44px; }
-  .tl-item:last-child { padding-bottom: 0; }
-  .tl-item::before {
-    content: ''; position: absolute; left: -28px; top: 4px; width: 11px; height: 11px;
-    border-radius: 50%; background: var(--bg); border: 2px solid var(--accent);
-  }
-  .tl-item .period { color: var(--text-dim); font-size: 13px; margin-bottom: 4px; }
-  .tl-item h3 { font-size: 18px; margin-bottom: 2px; }
-  .tl-item .org { color: var(--accent); font-size: 14px; margin-bottom: 12px; }
-  .tl-item ul { color: var(--text-muted); font-size: 14.5px; padding-left: 18px; }
-  .tl-item li { margin-bottom: 4px; }
+  /* Dialog */
+  dialog { margin: auto; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--slate); color: var(--cream); width: min(1040px, 94vw); max-height: 92vh; padding: 0; overflow: auto; }
+  dialog::backdrop { background: rgba(5, 7, 10, 0.78); backdrop-filter: blur(4px); }
+  .dlg-img { background: #0E1219; border-bottom: 1px solid var(--line); max-height: 52vh; overflow: auto; }
+  .dlg-img img { width: 100%; height: auto; }
+  .dlg-body { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 28px 32px 32px; }
+  .dlg-body h3 { font-size: 24px; grid-column: 1 / -1; }
+  .dlg-k { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+  .dlg-body p { color: var(--cream-2); font-size: 16px; }
+  .dlg-close { position: sticky; top: 12px; float: right; margin: 12px 12px -56px 0; width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--line-strong); background: var(--ink); color: var(--cream); font-size: 22px; cursor: pointer; z-index: 2; }
+  @media (max-width: 760px) { .dlg-body { grid-template-columns: 1fr; padding: 22px; } }
 
-  /* PORTFOLIO BELTS */
-  .belt-group { margin-top: 8px; }
-  .belt-group + .belt-group { margin-top: 54px; }
-  .belt-label {
-    display: inline-block; font-size: 11px; letter-spacing: 0.08em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
-  }
-  .belt-group h3 { font-size: 21px; margin-bottom: 8px; }
-  .belt-group > .belt-intro { color: var(--text-muted); font-size: 15px; max-width: 60ch; margin-bottom: 22px; }
+  /* Process */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: s; }
+  .step { border-top: 2px solid var(--line-strong); padding-top: 22px; }
+  .step:first-child { border-top-color: var(--orange); }
+  .step .n { font-size: 14px; font-weight: 800; color: var(--gray); }
+  .step h3 { margin: 8px 0 10px; }
+  .step p { color: var(--cream-2); font-size: 16px; }
 
-  .belt {
-    position: relative; padding-block: 6px; overflow-x: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-  }
-  .track {
-    display: flex; gap: 20px; width: max-content;
-    animation: beltslide var(--dur, 70s) linear infinite;
-    will-change: transform;
-  }
-  @keyframes beltslide { to { transform: translateX(calc(-50% - 10px)); } }
-  .belt:hover .track, .belt:focus-within .track, .belt.paused .track { animation-play-state: paused; }
+  /* About + Experience */
+  .about { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 56px; align-items: start; }
+  .portrait { border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 4 / 5; }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .about .lead + .lead { margin-top: 16px; }
+  .timeline { margin-top: 40px; display: grid; gap: 0; }
+  .job { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid var(--line); }
+  .job .when { font-size: 14px; color: var(--gray); font-weight: 600; }
+  .job h3 { font-size: 18px; }
+  .job .org { color: var(--gray); font-size: 15px; margin: 2px 0 10px; }
+  .job ul { padding-left: 18px; color: var(--cream-2); font-size: 15.5px; display: grid; gap: 6px; }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } .portrait { max-width: 360px; } .job { grid-template-columns: 1fr; gap: 6px; } }
 
-  .bcard {
-    flex: 0 0 auto; background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; overflow: hidden; padding: 0; cursor: zoom-in;
-    text-align: left; font-family: inherit; color: inherit;
-    transition: border-color 0.18s, transform 0.18s;
-  }
-  .bcard:hover, .bcard:focus-visible { border-color: var(--accent-line); transform: translateY(-3px); }
-  .bcard:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  /* Stack */
+  .stack { display: flex; flex-wrap: wrap; gap: 10px; }
+  .stack span { border: 1px solid var(--line-strong); border-radius: 10px; padding: 10px 14px; font-size: 15px; font-weight: 600; color: var(--cream-2); }
 
-  .bcard.wide { width: 600px; }
-  .bcard.wide .shot { height: 194px; }
-  @media (max-width: 700px) { .bcard.wide { width: 320px; } .bcard.wide .shot { height: 114px; } }
+  /* CTA */
+  .cta { background: var(--slate); border: 1px solid var(--line); border-radius: 20px; padding: 64px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+  .cta h2 { max-width: 16ch; }
+  .cta .lead { margin-top: 16px; }
+  .cta-side { display: grid; gap: 14px; }
+  .cta-side .btn { width: 100%; }
+  .contact-line { display: flex; gap: 12px; align-items: center; color: var(--cream-2); font-size: 15px; text-decoration: none; }
+  .contact-line svg { width: 18px; height: 18px; color: var(--gray); flex: none; }
+  @media (max-width: 900px) { .cta { grid-template-columns: 1fr; padding: 36px 24px; } }
 
-  .bcard.tall { width: 262px; }
-  .bcard.tall .shot { height: 292px; position: relative; }
-  .bcard.tall .shot img { object-fit: cover; object-position: top center; }
-  .bcard.tall .shot::after {
-    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 68px;
-    background: linear-gradient(to bottom, transparent, var(--surface));
-  }
-  @media (max-width: 700px) { .bcard.tall { width: 205px; } .bcard.tall .shot { height: 226px; } }
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--gray); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer img { height: 28px; width: auto; }
 
-  .shot {
-    background: #1B1F27; display: flex; align-items: center; justify-content: center;
-    border-bottom: 1px solid var(--border); overflow: hidden;
+  @media (max-width: 1000px) {
+    .problems, .services, .builds, .steps { grid-template-columns: 1fr 1fr; }
+    .wins { grid-template-columns: 1fr 1fr; }
+    .win, .win.big { grid-column: span 1; }
   }
-  .shot img { width: 100%; height: 100%; object-fit: contain; }
+  @media (max-width: 640px) {
+    .proof-row { grid-template-columns: 1fr 1fr; }
+    section { padding: 72px 0; }
+    .hero { padding: 56px 0 64px; }
+    .problems, .services, .builds, .steps, .wins { grid-template-columns: 1fr; }
+    .hero-ctas .btn { width: 100%; }
+    body { font-size: 16px; }
+    .lead { font-size: 17px; }
+  }
+  /* ===== Motion: hero live flow ===== */
+  .flow-wrap { position: relative; will-change: transform; }
+  .flow-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin: 0 0 14px 2px; }
+  .flow-label .live { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); animation: pulse 1.6s ease-out infinite; }
+  .flow-label span.niche { color: var(--cream-2); transition: opacity .3s ease; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(93,198,190,.55); } 100% { box-shadow: 0 0 0 9px rgba(93,198,190,0); } }
+  .flow-card { transition: opacity .45s ease, border-color .45s ease, transform .45s ease; }
+  .flow.anim .flow-card { opacity: .32; }
+  .flow.anim .flow-card.on { opacity: 1; border-color: var(--line-strong); }
+  .flow.anim .flow-card.on.booked-card { border-color: rgba(93,198,190,.45); box-shadow: 0 0 0 1px rgba(93,198,190,.25), 0 24px 48px -24px rgba(0,0,0,.6); }
+  .bubble { min-height: 41px; }
+  .typing { display: inline-flex; gap: 4px; align-items: center; height: 21px; }
+  .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--gray); animation: blink 1s infinite; }
+  .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+  .travel { position: absolute; left: -14px; top: 0; bottom: 0; width: 2px; background: var(--line); border-radius: 2px; }
+  .travel::after { content: ""; position: absolute; left: -4px; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); top: var(--p, 0%); transform: translateY(-50%); box-shadow: 0 0 14px rgba(235,146,26,.7); transition: top .9s cubic-bezier(.5,0,.2,1), background-color .4s; }
+  .travel.done::after { background: var(--teal); box-shadow: 0 0 14px rgba(93,198,190,.7); }
+  @media (max-width: 900px) { .travel { display: none; } }
 
-  .bcap { padding: 14px 17px 16px; }
-  .bcap h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14.5px; margin-bottom: 5px; }
-  .bcap .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 11.5px; color: var(--text-dim); }
-  .bcap .count { color: var(--teal); background: var(--teal-dim); padding: 2px 8px; border-radius: 10px; }
+  /* ===== Motion: automation feed ===== */
+  .feed-sec { padding: 0 0 24px; }
+  .feed { position: relative; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 18px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .feed-track { display: flex; gap: 14px; width: max-content; animation: marquee var(--dur, 60s) linear infinite; }
+  .feed-item { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; background: var(--slate); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-size: 14px; color: var(--cream-2); }
+  .feed-item b { color: var(--cream); font-weight: 700; }
+  .feed-item .dot { width: 7px; height: 7px; }
+  .feed-cap { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray); margin-bottom: 14px; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .feed:hover .feed-track { animation-play-state: paused; }
 
-  /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact h2 { font-size: 32px; margin-bottom: 16px; }
-  .contact p { color: var(--text-muted); margin-bottom: 24px; max-width: 50ch; }
-  .contact-info { display: flex; flex-direction: column; gap: 14px; }
-  .contact-info a, .contact-info div { font-size: 15px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
-  .contact-info a:hover { color: var(--text); }
-  .booking-embed {
-    border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;
-    background: var(--surface); text-align: center;
-  }
-  .booking-embed p { color: var(--text-dim); font-size: 13px; margin-top: 14px; }
-
-  footer { padding: 32px 0; }
-  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-  footer p { color: var(--text-dim); font-size: 13px; }
-  .footer-brand { display: flex; align-items: center; gap: 10px; }
-  .footer-brand img { height: 22px; width: 22px; border-radius: 5px; }
-
-  /* LIGHTBOX */
-  .lightbox {
-    position: fixed; inset: 0; background: rgba(7,9,13,0.95);
-    display: none; align-items: center; justify-content: center;
-    z-index: 200; padding: 26px; overflow-y: auto;
-  }
-  .lightbox.open { display: flex; }
-  @media (max-width: 700px) { .lightbox { padding: 0; align-items: stretch; } }
-  .lb-panel {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-    width: 100%; max-width: 1180px; overflow: hidden; max-height: calc(100vh - 52px);
-    display: grid; grid-template-rows: auto auto;
-    box-shadow: 0 40px 90px -24px rgba(0,0,0,0.85);
-  }
-  @media (max-width: 860px) { .lb-panel { border-radius: 0; border: none; max-height: none; } }
-  .lb-stage { position: relative; background: #1B1F27; padding: 20px; display: flex; justify-content: center; }
-  .lb-stage img { max-width: 100%; max-height: 48vh; object-fit: contain; border-radius: 6px; }
-  .lb-stage.portrait img { max-height: 76vh; }
-  @media (max-width: 860px) {
-    .lb-stage { padding: 12px; }
-    .lb-stage img { max-height: 36vh; }
-    .lb-stage.portrait img { max-height: 56vh; }
-  }
-  .lb-nav {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    width: 40px; height: 40px; border-radius: 50%;
-    background: rgba(11,14,20,0.92); border: 1px solid var(--border);
-    color: var(--text); cursor: pointer; font-size: 19px; line-height: 1;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .lb-nav:hover { border-color: var(--accent-line); color: var(--accent); }
-  .lb-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .lb-nav.prev { left: 14px; } .lb-nav.next { right: 14px; }
-  .lb-info {
-    padding: 24px 30px 28px; overflow-y: auto; border-top: 1px solid var(--border);
-    display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; align-items: start;
-  }
-  @media (max-width: 860px) { .lb-info { grid-template-columns: 1fr; gap: 18px; } }
-  .lb-info h3 { font-size: 20px; margin-bottom: 4px; }
-  .lb-counter { font-size: 12px; color: var(--text-dim); font-variant-numeric: tabular-nums; }
-  .lb-k {
-    font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase;
-    color: var(--text-dim); margin-bottom: 6px; display: block;
-  }
-  .lb-info p { color: var(--text-muted); font-size: 14.5px; }
-  .lb-helps { border-left: 2px solid var(--accent); padding-left: 14px; }
-  .lb-helps p { color: var(--text); }
-  .lb-stack { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 13px; }
-  .lb-stack span { font-size: 11.5px; color: var(--teal); background: var(--teal-dim); padding: 3px 9px; border-radius: 11px; }
-  .lb-cta {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: var(--accent); color: #0B0E14; font-weight: 700;
-    padding: 11px 22px; border-radius: 8px; font-size: 14px;
-    border: none; cursor: pointer; margin-top: 18px; text-decoration: none;
-  }
-  .lb-cta:hover { opacity: 0.92; }
-  .lightbox-close {
-    position: fixed; top: 16px; right: 20px; z-index: 210;
-    width: 38px; height: 38px; border-radius: 50%;
-    background: rgba(11,14,20,0.92); border: 1px solid var(--border);
-    color: var(--text); font-size: 22px; line-height: 1; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .lightbox-close:hover { border-color: var(--accent-line); color: var(--accent); }
-  .lightbox-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  /* ===== Motion: build belts ===== */
+  .belts { display: grid; gap: 22px; margin-top: 8px; }
+  .belt-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .belt-head h3 { font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--gray); font-weight: 700; }
+  .belt { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .belt-track { display: flex; gap: 18px; width: max-content; padding: 4px 0 8px; animation: marquee var(--dur, 70s) linear infinite; }
+  .belt.rev .belt-track { animation-direction: reverse; }
+  .belt:hover .belt-track, .belt:focus-within .belt-track, .belts.paused .belt-track, .feed.paused .feed-track { animation-play-state: paused; }
+  .belt .build { width: 340px; flex: none; }
+  .belt .build.tall { width: 300px; }
+  .pause-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--cream-2); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .pause-btn svg { width: 14px; height: 14px; }
+  .build-cta-row { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; justify-content: space-between; margin-top: 32px; padding: 24px 28px; border: 1px dashed var(--line-strong); border-radius: var(--r); }
+  .build-cta-row p { color: var(--cream-2); }
 
   @media (prefers-reduced-motion: reduce) {
-    .track { animation: none; }
-    .belt { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
-    .bcard:hover { transform: none; }
+    .feed-track, .belt-track { animation: none !important; }
+    .belt, .feed { overflow-x: auto; }
+    .flow-label .live, .typing i { animation: none; }
+    .travel::after { transition: none; }
   }
+
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<nav>
-  <div class="wrap">
-    <div class="logo"><img src="assets/logo-horizontal.png" alt="JT Flowops" /></div>
-    <div class="nav-links">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#proof">Proof</a></li>
-      </ul>
-      <a href="#contact" class="btn">Book a Call</a>
-    </div>
-  </div>
-</nav>
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top" aria-label="JT Flowops home"><img src="assets/logo-horizontal.png" alt="JT Flowops" width="122" height="34" /></a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#builds">Builds</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">Book a call</a>
+  </nav>
+</header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <h1>Leads don't wait for business hours. Neither should your follow-up.</h1>
-      <p class="lede">I build GoHighLevel CRM systems, AI conversation bots, and automation workflows for clinics, law firms, and real estate agencies, so no inquiry goes unanswered, day or night.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn">Book a Free Discovery Call</a>
-        <a href="#services" class="btn ghost">See what I build</a>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Lead follow-up and booking systems</span>
+        <h1>Leads don’t wait for business hours. Neither should your <span class="hl">follow-up.</span></h1>
+        <p class="lead">I build GoHighLevel and AI systems that reply to new leads in seconds, follow up for you, and book the call. Built for dental clinics, law firms and real estate teams.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">
+            Book a free 30-min call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#builds">See what I build</a>
+        </div>
+        <div class="proof-row">
+          <div><strong>5+ years</strong>in enterprise IT</div>
+          <div><strong>11</strong>live automation systems</div>
+          <div><strong>5</strong>businesses onboarded to GHL</div>
+          <div><strong>US + AU</strong>hours covered</div>
+        </div>
       </div>
-      <div class="badges">
-        <div class="badge"><span class="dot"></span>5+ years in tech</div>
-        <div class="badge"><span class="dot"></span>Australia-focused, global ready</div>
-      </div>
-    </div>
-    <div class="flow-graphic">
-      <svg viewBox="0 0 360 260" fill="none">
-        <path class="flow-path" d="M40 40 C 140 40, 100 130, 180 130 C 260 130, 220 220, 320 220" stroke="#E8A33D" stroke-width="2"/>
-        <g class="flow-node active"><circle cx="40" cy="40" r="22"/><text x="40" y="45" text-anchor="middle">Inquiry</text></g>
-        <g class="flow-node"><circle cx="180" cy="130" r="22"/><text x="180" y="135" text-anchor="middle">Qualify</text></g>
-        <g class="flow-node"><circle cx="320" cy="220" r="22"/><text x="320" y="225" text-anchor="middle">Booked</text></g>
-      </svg>
-    </div>
-  </div>
-</section>
 
-<section id="about">
-  <div class="wrap about-grid">
-    <div>
-      <h2>The specialist behind your automation stack</h2>
-      <p>I'm Jayson Tolentino, a GoHighLevel CRM and automation specialist who bridges the gap between complex marketing systems and real business results. I don't just set up software; I build systems designed to run reliably, day after day, without someone checking on them.</p>
-      <p>My background is in enterprise IT, not marketing. Over 4 years supporting international regions at DXC Technology, followed by a senior analyst role in enterprise infrastructure. That means every automation I build gets an engineer's attention to what happens when something goes wrong, not just when everything works.</p>
-      <p>Today, I help clinics, law firms, and real estate agencies escape the chaos of manual follow-up by building structured CRM systems, AI-powered conversation bots, and lead capture funnels that respond the moment someone reaches out, not the next morning.</p>
-    </div>
-    <div>
-      <img src="assets/headshot.webp" alt="Jayson Tolentino" loading="lazy" style="width:100%; border-radius:12px; border:1px solid var(--border); margin-bottom:24px;" />
-    <div class="fact-list">
-      <div class="fact-row"><span class="k">Primary Platform</span><span class="v">GoHighLevel (GHL)</span></div>
-      <div class="fact-row"><span class="k">Currently Serving</span><span class="v">Australia, expanding to US</span></div>
-      <div class="fact-row"><span class="k">Specialty</span><span class="v">Lead Response & AI Automation</span></div>
-      <div class="fact-row"><span class="k">Background</span><span class="v">Senior IT / Enterprise Ops</span></div>
-      <div class="fact-row"><span class="k">Based In</span><span class="v">Philippines, Remote</span></div>
-    </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Services built to answer for you</h2>
-      <p class="lede">Every service is designed to close the same gap: the time between someone reaching out and someone responding.</p>
-    </div>
-    <div class="services-list">
-      <div class="service-item">
-        <h3>CRM System Setup</h3>
-        <p>Full GoHighLevel builds: pipelines, contacts, tags, and workflows that turn your database into something that actually works for you.</p>
-        <div class="tag-row"><span class="tag">Pipelines</span><span class="tag">Contact Mgmt</span></div>
-      </div>
-      <div class="service-item">
-        <h3>Conversation AI & Chatbots</h3>
-        <p>WhatsApp, Facebook, and Instagram-integrated AI agents that qualify leads in real time and escalate to a human when it matters.</p>
-        <div class="tag-row"><span class="tag">WhatsApp</span><span class="tag">Meta API</span></div>
-      </div>
-      <div class="service-item">
-        <h3>Workflow Automation</h3>
-        <p>Email, SMS, and voicemail sequences that nurture leads and follow up automatically, without anyone chasing manually.</p>
-        <div class="tag-row"><span class="tag">Email/SMS</span><span class="tag">Triggers</span></div>
-      </div>
-      <div class="service-item">
-        <h3>Funnel Building</h3>
-        <p>Landing pages and booking flows that guide a prospect from first click to booked appointment, automatically.</p>
-        <div class="tag-row"><span class="tag">Landing Pages</span><span class="tag">Booking</span></div>
-      </div>
-      <div class="service-item">
-        <h3>Integrations & API</h3>
-        <p>Connecting your tech stack, Twilio, Mailgun, Stripe and beyond, into one system that talks to itself.</p>
-        <div class="tag-row"><span class="tag">Twilio</span><span class="tag">Stripe</span></div>
-      </div>
-      <div class="service-item">
-        <h3>SaaS Mode & White Label</h3>
-        <p>For agencies: full GoHighLevel SaaS mode setup, sub-account management, and reseller pricing configuration.</p>
-        <div class="tag-row"><span class="tag">SaaS Mode</span><span class="tag">Agency</span></div>
+      <div class="flow-wrap" id="flowWrap">
+        <p class="flow-label"><span class="live"></span>Example lead, <span class="niche" id="niche">dental clinic</span></p>
+        <div class="flow anim" id="flow" aria-label="Animated example: a new lead is answered, qualified and booked automatically">
+          <span class="travel" id="travel" aria-hidden="true"></span>
+          <div class="flow-card" data-step="0">
+            <div class="flow-top"><span class="chip"><span class="dot o"></span>Inquiry</span><span class="time" data-t="0">9:47 PM</span></div>
+            <div class="bubble" data-b="0">Hi, do you have any whitening slots this week?</div>
+          </div>
+          <div class="flow-card" data-step="1">
+            <div class="flow-top"><span class="chip"><span class="dot o"></span>Qualify</span><span class="time">Seconds later</span></div>
+            <div class="bubble me" data-b="1">Yes! Is this for you, and are mornings or afternoons better?</div>
+          </div>
+          <div class="flow-card booked-card" data-step="2">
+            <div class="flow-top"><span class="chip"><span class="dot t"></span>Booked</span><span class="time">Team notified</span></div>
+            <div class="booked" data-b="2">Thu 3:00 PM, confirmed by text and email</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="portfolio">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Systems I've built</h2>
-      <p class="lede">Eleven working systems across two platforms. Every one of them runs without someone watching it. Click any card to see the build and what it does for the business.</p>
+
+  <section class="feed-sec" aria-label="Examples of what the systems do automatically">
+    <div class="wrap">
+      <div class="feed-cap"><span>What runs while you sleep</span>
+        <button class="pause-btn" id="feedPause" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span>Pause</span></button>
+      </div>
     </div>
+    <div class="feed" id="feed"><div class="feed-track" id="feedTrack"></div></div>
+  </section>
 
-    <div class="belt-group">
-      <span class="belt-label">Built in n8n</span>
-      <h3>Automation systems</h3>
-      <p class="belt-intro">End-to-end workflows triggered by a schedule or a webhook, handling the work between systems that nobody wants to do by hand.</p>
-      <div class="belt" id="beltA"><div class="track" id="trackA"></div></div>
+  <section id="problem" style="padding-top: 24px;">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Where leads leak</span>
+        <h2>Most businesses don't need more leads. They need to <span class="hl">answer</span> the ones they have.</h2>
+      </div>
+      <div class="problems">
+        <article class="problem">
+          <span class="k">Leak 1</span>
+          <h3>Slow first reply</h3>
+          <p>An enquiry lands after hours and sits until morning. By then the lead has messaged two competitors.</p>
+          <p class="fix"><b>Fix:</b> an instant reply on WhatsApp, SMS, Messenger or web chat that asks the right questions.</p>
+        </article>
+        <article class="problem">
+          <span class="k">Leak 2</span>
+          <h3>Missed calls</h3>
+          <p>Most callers who reach voicemail never leave a message. They call the next number on the list.</p>
+          <p class="fix"><b>Fix:</b> a text-back within seconds and a callback list sorted by urgency.</p>
+        </article>
+        <article class="problem">
+          <span class="k">Leak 3</span>
+          <h3>No follow-up</h3>
+          <p>Leads rarely say no. They go quiet, and nobody has time to chase them for weeks.</p>
+          <p class="fix"><b>Fix:</b> a nurture sequence that keeps going and stops the moment they reply or book.</p>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="belt-group">
-      <span class="belt-label">Built in GoHighLevel</span>
-      <h3>CRM and follow-up systems</h3>
-      <p class="belt-intro">Lead capture, qualification and follow-up built inside the client's own CRM, so the pipeline stays accurate without anyone maintaining it by hand.</p>
-      <div class="belt" id="beltB"><div class="track" id="trackB"></div></div>
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Services</span>
+        <h2>One system from first message to <span class="hl">booked call.</span></h2>
+        <p class="lead">Built in GoHighLevel and n8n, tested end to end, and handed over with a template, a one-page how-to and a short recording.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18M6 12h12M10 19h4"/></svg></div>
+          <h3>CRM and pipeline setup</h3>
+          <p>Pipelines, forms, calendars, tags and custom fields in GoHighLevel, built from a snapshot so every sub-account starts clean.</p>
+        </article>
+        <article class="service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></div>
+          <h3>AI chat and WhatsApp bots</h3>
+          <p>Conversation AI that answers questions, qualifies the lead, offers slots and hands off to a person when it should.</p>
+        </article>
+        <article class="service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+          <h3>Follow-up and reactivation</h3>
+          <p>Email and SMS sequences, reminders that cut no-shows, and campaigns that wake up old leads. A2P-compliant SMS setup included.</p>
+        </article>
+        <article class="service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18v12H3z"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Funnels and landing pages</h3>
+          <p>Opt-in, booking and webinar pages in GoHighLevel or Lovable, with tracking, policy pages and confirmation emails.</p>
+        </article>
+        <article class="service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l3 8M16 7.5l-3 8"/></svg></div>
+          <h3>AI automations in n8n</h3>
+          <p>Scrapers, scoring, digests and reports that run on a schedule with Groq, Gemini or Claude, then land in Airtable or Slack.</p>
+        </article>
+        <article class="service">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h11"/></svg></div>
+          <h3>Ops systems and SOPs</h3>
+          <p>Team dashboards, onboarding playbooks, checklists and SOPs, so the system keeps running after I hand it over.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="proof" id="proof">
-      <div class="wrap proof-grid">
-        <div class="video-frame">
-          <video controls playsinline preload="none">
-            <source src="assets/demo.mp4" type="video/mp4">
-          </video>
+  <section id="results">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Results</span>
+        <h2>Real builds, running for <span class="hl">real teams.</span></h2>
+        <p class="lead">Client names are kept private. Every item below is work I built and can walk you through on a call.</p>
+      </div>
+      <div class="wins">
+        <article class="win big">
+          <span class="tag">Law firm · Live event</span>
+          <h3>Seminar funnel that ran out of seats</h3>
+          <p>Registration page, confirmation and reminder emails, tested SMS opt-in, policy pages and delivery checks in GoHighLevel for a live legal seminar.</p>
+          <p class="result"><span class="dot t"></span><span>Sign-ups passed the 48 available seats, so I added a waitlist and seat counters the same week.</span></p>
+        </article>
+        <article class="win big">
+          <span class="tag">Agency · UAE</span>
+          <h3>5 businesses onboarded to GoHighLevel</h3>
+          <p>A law firm, two medical and aesthetic clinics, an education institute and a business-setup advisory firm: pipelines, forms, calendars, workflows and nurture sequences.</p>
+          <p class="result"><span class="dot t"></span><span>Each one launched with lead capture and follow-up running from day one.</span></p>
+        </article>
+        <article class="win">
+          <span class="tag">Conversation AI</span>
+          <h3>WhatsApp bot that books</h3>
+          <p>Qualifies leads in natural conversation, captures details, offers slots, creates the opportunity and follows up with anyone who doesn't book.</p>
+          <p class="result"><span class="dot t"></span><span>Live and answering around the clock.</span></p>
+        </article>
+        <article class="win">
+          <span class="tag">n8n · AI scoring</span>
+          <h3>AI job-matching system</h3>
+          <p>Scrapes new listings every 15 minutes, scores fit with AI, filters by pay, drafts a proposal and alerts Slack.</p>
+          <p class="result"><span class="dot t"></span><span>It found the lead that became a full-time operations role.</span></p>
+        </article>
+        <article class="win">
+          <span class="tag">Operations</span>
+          <h3>Team ops dashboard</h3>
+          <p>A task board with approvals, client folders, SOPs and an AI helper for a remote team, plus Claude workflows for daily briefs and reports.</p>
+          <p class="result"><span class="dot t"></span><span>Replaced the team's monday.com.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="builds">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Builds</span>
+        <h2>11 systems I've built. Click one to see <span class="hl">how it works.</span></h2>
+      </div>
+      <div class="belt-head" style="margin-bottom:6px">
+        <p class="lead" style="font-size:16px">Hover to pause a row. Click any build for the workflow and what it does.</p>
+        <button class="pause-btn" id="beltPause" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span>Pause</span></button>
+      </div>
+      <div class="belts" id="belts">
+        <div>
+          <div class="belt-head"><h3>GoHighLevel</h3></div>
+          <div class="belt" id="beltGhl"><div class="belt-track"></div></div>
         </div>
         <div>
-          <h2>See it in action</h2>
-          <p>A clinic was losing leads every night after hours. No one responded until morning, and by then, half had already booked somewhere else.</p>
-          <p>I built them a Conversation AI bot inside GoHighLevel that answers instantly, walks the lead through their actual services and packages, and books the appointment directly, with no human needed until it's time to confirm.</p>
-          <a href="#contact" class="btn" style="margin-top: 12px;">Get this for your business</a>
+          <div class="belt-head"><h3>n8n + AI</h3></div>
+          <div class="belt rev" id="beltN8n"><div class="belt-track"></div></div>
         </div>
       </div>
-    </section>
+      <div class="build-cta-row">
+        <div><h3>Your system could be next</h3><p>Tell me where leads slip in your business and I’ll show you what I’d build.</p></div>
+        <a class="btn btn-primary" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">Book a free call</a>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Journey</h2>
-      <p class="lede">From enterprise IT support to full-stack automation.</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="period">Nov 2025 to Present</div>
-        <h3>GoHighLevel Automation Specialist</h3>
-        <div class="org">Freelance</div>
-        <ul>
-          <li>Implement CRM and automation systems using GoHighLevel</li>
-          <li>Build lead generation funnels and AI-powered conversation bots</li>
-          <li>Configure pipelines, SaaS mode, and CRM lead management systems</li>
-          <li>Integrate third-party tools including Twilio, Mailgun, Stripe, and Zapier</li>
-        </ul>
+  <section id="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How it works</span>
+        <h2>From leak check to a system your team <span class="hl">owns.</span></h2>
       </div>
-      <div class="tl-item">
-        <div class="period">May 2025 to June 30, 2026</div>
-        <h3>Senior IT Analyst</h3>
-        <div class="org">Microsourcing</div>
-        <ul>
-          <li>Senior escalation point for complex hardware, software, network, and cloud issues</li>
-          <li>Administered and optimized Microsoft 365 and Azure AD (Entra ID)</li>
-          <li>Managed Intune, Conditional Access, and MFA configurations</li>
-        </ul>
-      </div>
-      <div class="tl-item">
-        <div class="period">Aug 2021 to Nov 2025</div>
-        <h3>Specialized IT Service Desk</h3>
-        <div class="org">DXC Technology</div>
-        <ul>
-          <li>Advanced IT troubleshooting and technical support across APJ, EMEA, and AMS regions</li>
-          <li>Diagnosed and resolved complex software, hardware, and network issues</li>
-          <li>Built cross-regional reputation for reliability and technical depth</li>
-        </ul>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><h3>Free leak check</h3><p>We look at how leads reach you today and where they slip: first reply, missed calls, follow-up and booking.</p></div>
+        <div class="step"><span class="n">02</span><h3>Build and test</h3><p>I build the fix in your GoHighLevel account and test every path end to end before anything goes live.</p></div>
+        <div class="step"><span class="n">03</span><h3>Hand over</h3><p>You get the template, a one-page how-to and a short recording. Ongoing support or new builds are optional add-ons.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Tech stack</h2>
-      <p class="lede">The tools I build with, end to end, from CRM to cloud infrastructure.</p>
-    </div>
-    <div class="tools-cloud">
-      <div class="tool-pill"><span class="dot"></span>GoHighLevel</div>
-      <div class="tool-pill"><span class="dot"></span>n8n</div>
-      <div class="tool-pill"><span class="dot"></span>Zapier</div>
-      <div class="tool-pill"><span class="dot"></span>Twilio</div>
-      <div class="tool-pill"><span class="dot"></span>Mailgun</div>
-      <div class="tool-pill"><span class="dot"></span>Stripe</div>
-      <div class="tool-pill"><span class="dot"></span>Meta / WhatsApp Business API</div>
-      <div class="tool-pill"><span class="dot"></span>Microsoft Azure</div>
-      <div class="tool-pill"><span class="dot"></span>Microsoft 365 / Entra ID</div>
-      <div class="tool-pill"><span class="dot"></span>Intune</div>
-      <div class="tool-pill"><span class="dot"></span>Calendly</div>
-      <div class="tool-pill"><span class="dot"></span>Webhooks / API</div>
-    </div>
-  </div>
-</section>
+  <section id="about">
+    <div class="wrap about">
+      <div class="portrait"><img src="assets/headshot.webp" alt="Jayson Tolentino" loading="lazy" width="783" height="1120" /></div>
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>An IT person who builds <span class="hl">sales systems.</span></h2>
+        <p class="lead" style="margin-top:20px">I'm Jayson, based in the Philippines and working remotely on US and Australian hours. I came into automation after five years in enterprise IT support, so I build like an IT person: documented, tested and handed over properly.</p>
+        <p class="lead">Today I run operations and GoHighLevel builds for marketing agencies and service businesses, and I build AI automations in n8n.</p>
 
-<section id="contact">
-  <div class="wrap contact-grid">
-    <div class="contact">
-      <h2>Ready to stop losing leads?</h2>
-      <p>Tell me about your business and I'll map out what a system that doesn't drop leads would look like for you, no strings attached.</p>
-      <div class="contact-info">
-        <a href="tel:+639218311945">+63 921 831 1945</a>
-        <a href="mailto:jayson.tolentino1017@gmail.com">jayson.tolentino1017@gmail.com</a>
-        <div>Philippines. Remote, working Australia &amp; US hours</div>
+        <div class="timeline" aria-label="Experience">
+          <div class="job">
+            <span class="when">Nov 2025 to present</span>
+            <div>
+              <h3>Freelance Operations Manager and GoHighLevel Automation Specialist</h3>
+              <p class="org">Remote · US and UAE clients</p>
+              <ul>
+                <li>Run day-to-day operations for a US video marketing company: build briefs, QA, SOPs, hiring screens and client follow-through for a remote team of 8.</li>
+                <li>Build client sub-accounts for a US home-services marketing agency: snapshots, calendars, pipelines, list cleaning, A2P registration and reactivation.</li>
+                <li>Onboarded 5 UAE businesses onto GoHighLevel through an agency.</li>
+                <li>Build AI automations in n8n: an AI job-matching pipeline, WhatsApp lead bots and team ops dashboards.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="job">
+            <span class="when">May 2025 to Jun 2026</span>
+            <div>
+              <h3>Senior IT Analyst</h3>
+              <p class="org">Microsourcing</p>
+              <ul><li>Enterprise IT support for an Australian client: ticketing, troubleshooting and Microsoft 365, Entra ID and Intune.</li></ul>
+            </div>
+          </div>
+          <div class="job">
+            <span class="when">Aug 2021 to Nov 2025</span>
+            <div>
+              <h3>IT Specialist, Service Desk</h3>
+              <p class="org">DXC Technology</p>
+              <ul><li>Specialized service desk for enterprise clients: incident handling, troubleshooting, ticketing and documentation.</li></ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="booking-embed">
-      <!-- Calendly booking link -->
-      <a href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener" class="btn" style="width:100%; justify-content:center;">Book a Free 30-Min Discovery Call</a>
-      <p>Opens your Calendly scheduling page</p>
+  </section>
+
+  <section id="stack" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Tools I use</span></div>
+      <div class="stack">
+        <span>GoHighLevel</span><span>Conversation AI</span><span>A2P 10DLC</span><span>n8n</span><span>Airtable</span><span>Slack</span><span>Claude and Claude Code</span><span>Groq</span><span>Gemini</span><span>Lovable</span><span>Meta lead ads</span><span>Webhooks and APIs</span><span>Google Workspace</span><span>Microsoft 365</span><span>Entra ID</span><span>Intune</span>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="contact" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Ready to stop losing <span class="hl">leads?</span></h2>
+          <p class="lead">Book a free 30-minute call. I'll show you where your leads are slipping and what I'd fix first.</p>
+        </div>
+        <div class="cta-side">
+          <a class="btn btn-primary" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">Book a free 30-min call</a>
+          <a class="btn btn-ghost" href="assets/Jayson-Tolentino-Resume.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            Download resume (PDF)
+          </a>
+          <a class="contact-line" href="mailto:jayson.tolentino1017@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>jayson.tolentino1017@gmail.com</a>
+          <a class="contact-line" href="tel:+639218311945"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>+63 921 831 1945</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="footer-brand">
-      <img src="assets/logo-square-dark.png" alt="JT Flowops" />
-      <p>© 2026 Jayson Tolentino. GoHighLevel and AI Automation Specialist</p>
-    </div>
-    <p>jayson.tolentino1017@gmail.com · +63 921 831 1945</p>
+    <img src="assets/logo-horizontal.png" alt="JT Flowops" width="100" height="28" />
+    <span>© 2026 Jayson Tolentino · JT Flowops · CAPTURE • QUALIFY • BOOK</span>
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
-  <button class="lightbox-close" id="lbClose" aria-label="Close">&times;</button>
-  <div class="lb-panel">
-    <div class="lb-stage">
-      <button class="lb-nav prev" id="lbPrev" aria-label="Previous system">&#8249;</button>
-      <img id="lightbox-img" alt="" />
-      <button class="lb-nav next" id="lbNext" aria-label="Next system">&#8250;</button>
-    </div>
-    <div class="lb-info">
-      <div>
-        <span class="lb-counter" id="lbCount"></span>
-        <h3 id="lbTitle"></h3>
-        <div style="margin-top:13px">
-          <span class="lb-k">What it is</span>
-          <p id="lbWhat"></p>
-        </div>
-        <div class="lb-stack" id="lbStack"></div>
-      </div>
-      <div>
-        <span class="lb-k">How it helps the business</span>
-        <div class="lb-helps"><p id="lbHelp"></p></div>
-        <a class="lb-cta" href="#contact" id="lbCta">Get this for your business</a>
-      </div>
-    </div>
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <button class="dlg-close" id="dlgClose" aria-label="Close">×</button>
+  <div class="dlg-img"><img id="dlgImg" alt="" /></div>
+  <div class="dlg-body">
+    <h3 id="dlgTitle"></h3>
+    <div><p class="dlg-k">What it does</p><p id="dlgWhat"></p></div>
+    <div><p class="dlg-k">Why a business wants it</p><p id="dlgHelp"></p><div class="meta" id="dlgStack" style="margin-top:16px"></div></div>
   </div>
-</div>
+</dialog>
 
 <script>
 (function () {
-  var N8N = [
-    { img: 'proj-missed-call', title: 'AI Missed-Call Receptionist', tag: '12 nodes',
-      stack: ['Groq', 'Twilio', 'Webhooks'],
-      what: "Catches an unanswered call within seconds. It normalizes the caller record, runs safety checks, has an AI model read the context and draft a text-back, then separates urgent from routine: urgent flags an immediate callback, routine joins the queue. A human approves before anything sends.",
-      help: "Most people who reach a voicemail never leave one, they call the next number on the list. This replies in writing within seconds and tells the front desk who to ring back first." },
-    { img: 'proj-dead-lead', title: 'Dead Lead Reactivation', tag: '12 nodes',
-      stack: ['Groq', 'Airtable'],
-      what: "Takes dormant leads, filters to the ones actually worth approaching again, scores each against deterministic rules rather than a guess, and has an AI model draft personal re-engagement copy. Confident drafts are filed ready to send; anything uncertain is routed to a person.",
-      help: "The cheapest leads you will ever get are the ones you already paid for. This works a dormant list properly without anyone writing a hundred individual messages." },
-    { img: 'proj-weekly-digest', title: 'Weekly Client Performance Digest', tag: '10 nodes',
-      stack: ['GoHighLevel', 'Groq', 'Slack'],
-      what: "Every Monday morning it pulls each client's pipeline value from GoHighLevel, keeps only the last seven days of movement, and has an AI model write a plain-English summary of what changed. Every client is combined into one digest and posted to Slack.",
-      help: "Client reporting is the work nobody enjoys and everybody bills for. This produces the same report every week, on time, without a person assembling it by hand." },
-    { img: 'proj-instagram-publisher', title: 'Approved Instagram Publisher', tag: '31 nodes',
-      stack: ['Meta Graph API', 'Webhooks'],
-      what: "Runs the entire Instagram publishing sequence once a post is approved. It validates the approval and the media, routes reels and carousels down separate paths, creates the containers Meta requires, waits for processing, checks status, and publishes only once Meta confirms the media is ready. A failure stops the run instead of posting something broken.",
-      help: "Instagram's publishing API is a multi-step handshake with real failure modes, especially for carousels. Done carelessly it posts broken media to a live account. This absorbs the waiting and the retries so a person only has to approve." },
-    { img: 'proj-news-digest', title: 'Industry and Competitor News Digest', tag: '9 nodes',
-      stack: ['Google News', 'Groq', 'Slack'],
-      what: "On a schedule it searches your chosen topics and named competitors across Google News, filters out the noise, and has an AI model summarize only what genuinely matters. The finished digest lands in Slack.",
-      help: "Keeping up with your own market is the task that always loses to client work. This does the reading every morning and hands over the short version." },
-    { img: 'proj-content-repurposing', title: 'Content Repurposing Pipeline', tag: '6 nodes',
-      stack: ['Tally', 'Gemini', 'Airtable'],
-      what: "One form submission drops a single piece of source content into the pipeline. An AI model writes platform-specific captions from it, the response is parsed into clean structured fields, and every variant is filed in Airtable ready to schedule.",
-      help: "One good idea should not be rewritten five times by hand for five platforms. This turns a single input into a full set of ready captions in about the time it takes to fill in the form." },
-    { img: 'proj-listing-scraper', title: 'Multi-Source Listing Scraper', tag: '26 nodes',
-      stack: ['Airtable', 'Slack', 'Scheduled HTTP'],
-      what: "On a schedule it pulls listings from three independent sources, parses each into one common shape, checks every result against what has already been stored so nothing is recorded twice, files the new ones in Airtable, and posts them to Slack.",
-      help: "This is lead sourcing with the labels changed. The same pattern, several sources into one shape, deduplicated, filed and announced, is what fills a sales pipeline from directories, tender boards or listing sites." }
+  var BUILDS = [
+    { f: 'ghl', img: 'ghl-whatsapp-capture', tall: true, title: 'WhatsApp Lead Capture and Qualification', stack: ['GoHighLevel', 'WhatsApp', 'Tasks'],
+      what: "A WhatsApp enquiry is tagged on arrival, added to the pipeline as an opportunity and pushed to the team as a notification plus a named review task. Sixty minutes later the workflow checks whether an appointment was booked. If not, a second follow-up task is raised automatically.",
+      help: "WhatsApp enquiries are easy to answer and just as easy to forget. The sixty-minute check turns “someone will get to it” into a tracked task with a name against it, before the lead goes cold." },
+    { f: 'ghl', img: 'ghl-prequalification', tall: true, title: 'New Lead Pre-Qualification', stack: ['GoHighLevel', 'Custom fields', 'Urgency routing'],
+      what: "Every new contact is tagged, has its custom fields filled and is added to the pipeline before a person touches it. A condition reads the urgency flag and sends a separate, louder alert only for urgent cases.",
+      help: "The CRM stays accurate by default instead of by discipline, and attention goes to the enquiry that can't wait, not just the one that arrived last." },
+    { f: 'ghl', img: 'ghl-consultation-booking', tall: true, title: 'Consultation Booking and Reminders', stack: ['GoHighLevel', 'Calendar', 'Email'],
+      what: "When a consultation is booked, the opportunity moves stage and a prep task is created. A three-email sequence then runs around the appointment, the day before and the hour before.",
+      help: "An empty slot costs as much as a no-show, plus the prep time. This keeps the appointment in front of the client without anyone remembering to send a reminder." },
+    { f: 'ghl', img: 'ghl-nurture-sequence', tall: true, title: 'New Lead Nurture Sequence', stack: ['GoHighLevel', 'Email and SMS', 'Reply detection'],
+      what: "A long-running sequence for leads who didn't convert on first contact. It alternates waits with checks, so anyone who replies or books drops out at once while everyone else keeps being worked.",
+      help: "Most leads never say no, they just stop replying. This keeps following up long after a person would give up, and stops the moment they engage." },
+    { f: 'n8n', img: 'proj-listing-scraper', title: 'AI Job and Lead Scraper', stack: ['n8n', 'Groq', 'Airtable', 'Slack'],
+      what: "Every 15 minutes it pulls new listings from several sources, puts them in one format, skips anything already saved, scores each one with AI, filters out low pay, drafts a proposal and posts the best ones to Slack.",
+      help: "The same pattern fills a sales pipeline from directories, tender boards or listing sites. I use it myself: it found the lead that became a full-time operations role." },
+    { f: 'n8n', img: 'proj-missed-call', title: 'AI Missed-Call Receptionist', stack: ['n8n', 'Groq', 'Webhooks'],
+      what: "Catches an unanswered call within seconds, checks the caller record, has AI draft a text-back and sorts urgent from routine. A person approves before anything sends.",
+      help: "Most people who reach voicemail call the next business instead. This replies in writing within seconds and tells the front desk who to call back first." },
+    { f: 'n8n', img: 'proj-dead-lead', title: 'Dead Lead Reactivation', stack: ['n8n', 'Groq', 'Airtable'],
+      what: "Takes dormant leads, keeps the ones worth contacting again, scores each with fixed rules and has AI draft a personal message. Confident drafts are filed ready to send. Anything unsure goes to a person.",
+      help: "The cheapest leads you'll ever get are the ones you already paid for. This works an old list without anyone writing a hundred messages by hand." },
+    { f: 'n8n', img: 'proj-weekly-digest', title: 'Weekly Client Performance Digest', stack: ['n8n', 'GoHighLevel', 'Groq', 'Slack'],
+      what: "Every Monday it pulls each client's pipeline from GoHighLevel, keeps the last seven days of movement and has AI write a plain-English summary. All clients land in one Slack digest.",
+      help: "Client reporting is the work nobody enjoys and everybody bills for. This produces the same report every week, on time, without anyone assembling it." },
+    { f: 'n8n', img: 'proj-instagram-publisher', title: 'Approved Instagram Publisher', stack: ['n8n', 'Meta Graph API'],
+      what: "Runs Instagram's whole publishing sequence once a post is approved: checks the media, routes Reels and carousels separately, waits for processing and publishes only when Meta confirms it's ready.",
+      help: "Instagram's API is a multi-step handshake that breaks easily, especially for carousels. This handles the waiting and retries so a person only has to approve." },
+    { f: 'n8n', img: 'proj-news-digest', title: 'Industry and Competitor News Digest', stack: ['n8n', 'Google News', 'Groq', 'Slack'],
+      what: "On a schedule it searches chosen topics and competitors in Google News, filters out noise and has AI summarize what matters. The digest lands in Slack.",
+      help: "Keeping up with your market always loses to client work. This does the reading every morning and hands over the short version." },
+    { f: 'n8n', img: 'proj-content-repurposing', title: 'Content Repurposing Pipeline', stack: ['n8n', 'Gemini', 'Airtable'],
+      what: "One form submission sends a piece of content into the pipeline. AI writes captions for each platform, the result is parsed into clean fields and every version is filed in Airtable, ready to schedule.",
+      help: "One good idea shouldn't be rewritten five times by hand. This turns one input into a full set of captions in the time it takes to fill in a form." }
   ];
 
-  var GHL = [
-    { img: 'ghl-whatsapp-capture', title: 'WhatsApp Lead Capture and Qualification', tag: 'Tag trigger',
-      stack: ['WhatsApp', 'Opportunities', 'Tasks'],
-      what: "A WhatsApp enquiry is tagged on arrival, written into the pipeline as an opportunity at the Contacted stage, and pushed to the team as a notification plus a named review task. Sixty minutes later the workflow checks whether an appointment was actually booked. If it was, the contact is tagged as scheduled. If it was not, a second follow-up task is raised automatically.",
-      help: "WhatsApp enquiries are easy to answer and just as easy to forget. The sixty minute check is the part that earns its keep: it turns \u201csomeone will get to it\u201d into a tracked task with a name against it, before the lead has gone cold." },
-    { img: 'ghl-prequalification', title: 'New Lead to Pre-Qualification', tag: 'Contact created',
-      stack: ['Tags', 'Custom fields', 'Urgency routing'],
-      what: "Every new contact is tagged, has its custom fields populated and is written into the pipeline as an opportunity before a human touches it. A condition then reads the urgency flag and raises a separate, louder notification only for the urgent ones.",
-      help: "It makes the CRM accurate by default instead of by discipline, which is the difference between a pipeline you can report on and one you cannot. Routing urgent cases down their own branch also means attention goes to the enquiry that cannot wait, not simply the one that arrived last." },
-    { img: 'ghl-consultation-booking', title: 'Consultation Booking and Reminders', tag: 'Appointment trigger',
-      stack: ['Calendar', 'Email sequence', 'Tasks'],
-      what: "The moment a consultation is booked the opportunity moves stage and a preparation task is created, then a three-email sequence runs on a fixed schedule around the appointment, spaced across the day before and the hour before.",
-      help: "No-shows are the hidden cost of offering free consultations: an unattended slot costs exactly what an empty one does, plus the preparation time. This keeps the appointment in front of the client without anyone remembering to send a reminder." },
-    { img: 'ghl-nurture-sequence', title: 'New Lead Nurture Sequence', tag: 'Multi-stage',
-      stack: ['Email and SMS', 'Reply detection', 'Stage automation'],
-      what: "A long-running sequence for leads who did not convert on first contact. It alternates timed waits with condition checks, so a lead who replies or books drops out immediately while everyone else continues to be worked across days and weeks.",
-      help: "Most leads never say no, they simply stop replying. This keeps contacting them long after a person would have given up, and stops the instant they engage, so nobody receives a follow-up to something they have already answered." }
-  ];
-
-  var SETS = { n8n: N8N, ghl: GHL };
-
-  function buildBelt(track, list, key, cls) {
-    function card(w, i, clone) {
-      var b = document.createElement('button');
-      b.className = 'bcard ' + cls;
-      b.dataset.set = key;
-      b.dataset.i = i;
-      if (clone) b.setAttribute('aria-hidden', 'true');
-      b.setAttribute('aria-label', 'Open ' + w.title);
-      b.innerHTML =
-        '<div class="shot"><img src="assets/' + w.img + '.webp" alt="' + w.title + '" loading="lazy" /></div>' +
-        '<div class="bcap"><h4>' + w.title + '</h4>' +
-        '<div class="meta"><span class="count">' + w.tag + '</span><span>' +
-        w.stack.slice(0, 2).join(' \u00b7 ') + '</span></div></div>';
-      return b;
-    }
-    list.forEach(function (w, i) { track.appendChild(card(w, i, false)); });
-    list.forEach(function (w, i) { track.appendChild(card(w, i, true)); });
+  function card(b, i, clone) {
+    var el = document.createElement('button');
+    el.className = 'build' + (b.tall ? ' tall' : '');
+    el.dataset.i = i;
+    if (clone) { el.setAttribute('aria-hidden', 'true'); el.tabIndex = -1; }
+    el.setAttribute('aria-label', 'Open details: ' + b.title);
+    el.innerHTML = '<div class="shot"><img src="assets/' + b.img + '.webp" alt="" loading="lazy" /></div>' +
+      '<div class="cap"><h3>' + b.title + '</h3><div class="meta">' +
+      b.stack.filter(function (s) { return s !== 'GoHighLevel' && s !== 'n8n'; }).slice(0, 3).map(function (s) { return '<span class="pill">' + s + '</span>'; }).join('') +
+      '</div></div>';
+    return el;
   }
+  function fillBelt(id, f, speed) {
+    var track = document.querySelector('#' + id + ' .belt-track');
+    var list = [];
+    BUILDS.forEach(function (b, i) { if (b.f === f) list.push([b, i]); });
+    list.forEach(function (x) { track.appendChild(card(x[0], x[1], false)); });
+    list.forEach(function (x) { track.appendChild(card(x[0], x[1], true)); });
+    requestAnimationFrame(function () { track.style.setProperty('--dur', (track.scrollWidth / 2 / speed) + 's'); });
+  }
+  fillBelt('beltGhl', 'ghl', 38);
+  fillBelt('beltN8n', 'n8n', 42);
 
-  var trackA = document.getElementById('trackA');
-  var trackB = document.getElementById('trackB');
-  buildBelt(trackA, N8N, 'n8n', 'wide');
-  buildBelt(trackB, GHL, 'ghl', 'tall');
-
-  function setDurations() {
-    [trackA, trackB].forEach(function (t) {
-      var px = t.scrollWidth / 2;
-      t.style.setProperty('--dur', (px / 52) + 's');
+  function pauser(btnId, targetId) {
+    var btn = document.getElementById(btnId), t = document.getElementById(targetId);
+    btn.addEventListener('click', function () {
+      var on = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      t.classList.toggle('paused', on);
+      btn.querySelector('span').textContent = on ? 'Play' : 'Pause';
+      btn.querySelector('svg').innerHTML = on ? '<path d="M8 5v14l11-7z"/>' : '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>';
     });
   }
-  requestAnimationFrame(setDurations);
-  window.addEventListener('resize', setDurations);
+  pauser('beltPause', 'belts');
+  pauser('feedPause', 'feed');
 
-  /* no hover on touch, so the first tap parks the belt and the next one opens a card */
-  ['beltA', 'beltB'].forEach(function (id) {
-    var el = document.getElementById(id);
-    el.addEventListener('touchstart', function () { el.classList.add('paused'); }, { passive: true });
-  });
-
-  /* lightbox */
-  var lb = document.getElementById('lightbox');
-  var lbImg = document.getElementById('lightbox-img');
-  var curSet = 'n8n', idx = 0, lastFocus = null;
-
-  function paint() {
-    var list = SETS[curSet], w = list[idx];
-    lbImg.src = 'assets/' + w.img + '.webp';
-    lbImg.alt = w.title;
-    document.getElementById('lbTitle').textContent = w.title;
-    document.getElementById('lbWhat').textContent = w.what;
-    document.getElementById('lbHelp').textContent = w.help;
-    document.getElementById('lbCount').textContent =
-      (curSet === 'n8n' ? 'n8n' : 'GoHighLevel') + ' \u00b7 ' + (idx + 1) + ' of ' + list.length;
-    document.getElementById('lbStack').innerHTML =
-      w.stack.map(function (s) { return '<span>' + s + '</span>'; }).join('');
-    var stageEl = document.querySelector('.lb-stage');
-    lbImg.onload = function () {
-      stageEl.classList.toggle('portrait', lbImg.naturalHeight > lbImg.naturalWidth);
-    };
+  // Automation feed
+  var EVENTS = [
+    ['o', 'New lead', 'tagged, added to the pipeline, owner notified'],
+    ['o', 'Missed call', 'text-back sent in seconds'],
+    ['t', 'Booked', 'consultation confirmed by text and email'],
+    ['o', 'WhatsApp enquiry', 'qualified by AI, slots offered'],
+    ['g', 'Reminder', 'sent 24 hours before the appointment'],
+    ['o', 'Quiet lead', 'day 3 follow-up sent'],
+    ['t', 'Reply detected', 'nurture sequence stopped'],
+    ['g', 'Monday report', 'pipeline summary posted to Slack'],
+    ['o', 'Old lead list', 'reactivation messages drafted'],
+    ['t', 'No-show prevented', 'reminder confirmed by the client']
+  ];
+  var feedTrack = document.getElementById('feedTrack');
+  function feedItem(e, clone) {
+    var s = document.createElement('span');
+    s.className = 'feed-item';
+    if (clone) s.setAttribute('aria-hidden', 'true');
+    s.innerHTML = '<span class="dot ' + (e[0] === 'g' ? '' : e[0]) + '"></span><b>' + e[1] + '</b> ' + e[2];
+    return s;
   }
-  function go(n) { var L = SETS[curSet].length; idx = (n + L) % L; paint(); }
-  function openCard(set, i) {
-    curSet = set; idx = i; lastFocus = document.activeElement;
-    paint();
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('lbClose').focus();
-  }
-  function closeLb() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-    lbImg.removeAttribute('src');
-    if (lastFocus) lastFocus.focus();
-  }
+  EVENTS.forEach(function (e) { feedTrack.appendChild(feedItem(e, false)); });
+  EVENTS.forEach(function (e) { feedTrack.appendChild(feedItem(e, true)); });
+  requestAnimationFrame(function () { feedTrack.style.setProperty('--dur', (feedTrack.scrollWidth / 2 / 45) + 's'); });
 
-  document.addEventListener('click', function (e) {
-    var c = e.target.closest('.bcard');
-    if (c) { openCard(c.dataset.set, +c.dataset.i); return; }
-    if (e.target === lb) closeLb();
-  });
-  document.getElementById('lbClose').addEventListener('click', closeLb);
-  document.getElementById('lbPrev').addEventListener('click', function () { go(idx - 1); });
-  document.getElementById('lbNext').addEventListener('click', function () { go(idx + 1); });
-  document.getElementById('lbCta').addEventListener('click', closeLb);
-
-  document.addEventListener('keydown', function (e) {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowLeft') go(idx - 1);
-    if (e.key === 'ArrowRight') go(idx + 1);
-    if (e.key === 'Tab') {
-      var f = [].slice.call(lb.querySelectorAll('button, a[href]'))
-        .filter(function (el) { return el.offsetParent !== null; });
-      if (!f.length) return;
-      var first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  // Hero live flow
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var flow = document.getElementById('flow');
+  var SCEN = [
+    { niche: 'dental clinic', t: '9:47 PM', a: 'Hi, do you have any whitening slots this week?', b: 'Yes! Is this for you, and are mornings or afternoons better?', c: 'Thu 3:00 PM, confirmed by text and email' },
+    { niche: 'law firm', t: '11:12 PM', a: 'I have a custody question. Can someone call me tomorrow?', b: 'Of course. Is this about an existing order or a new case?', c: 'Consult Tue 10:30 AM, attorney notified' },
+    { niche: 'real estate team', t: '6:05 AM', a: 'Is the 3-bed on Oak St still available?', b: 'It is! Are you pre-approved, and when could you view it?', c: 'Viewing Sat 11:00 AM, agent notified' }
+  ];
+  if (reduce) { flow.classList.remove('anim'); }
+  else {
+    var cards = flow.querySelectorAll('.flow-card'), travel = document.getElementById('travel'), niche = document.getElementById('niche');
+    var typing = '<span class="typing"><i></i><i></i><i></i></span>';
+    var k = 0, timers = [];
+    function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+    function pos(i) { var c = cards[i]; return (c.offsetTop + c.offsetHeight / 2) / flow.offsetHeight * 100 + '%'; }
+    function run() {
+      var s = SCEN[k % SCEN.length]; k++;
+      cards.forEach(function (c) { c.classList.remove('on'); });
+      travel.classList.remove('done');
+      niche.style.opacity = 0;
+      at(250, function () { niche.textContent = s.niche; niche.style.opacity = 1; flow.querySelector('[data-t="0"]').textContent = s.t; });
+      flow.querySelector('[data-b="0"]').innerHTML = typing;
+      flow.querySelector('[data-b="1"]').innerHTML = '';
+      flow.querySelector('[data-b="2"]').textContent = '';
+      travel.style.setProperty('--p', pos(0));
+      at(300, function () { cards[0].classList.add('on'); });
+      at(1300, function () { flow.querySelector('[data-b="0"]').textContent = s.a; });
+      at(2300, function () { travel.style.setProperty('--p', pos(1)); cards[1].classList.add('on'); flow.querySelector('[data-b="1"]').innerHTML = typing; });
+      at(3500, function () { flow.querySelector('[data-b="1"]').textContent = s.b; });
+      at(4700, function () { travel.style.setProperty('--p', pos(2)); travel.classList.add('done'); cards[2].classList.add('on'); flow.querySelector('[data-b="2"]').textContent = s.c; });
+      at(8200, run);
     }
-  });
+    run();
+    // continuous scroll-linked drift (no fade-in reveals)
+    var wrapEl = document.getElementById('flowWrap'), ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { var y = Math.min(window.scrollY, 900); wrapEl.style.transform = 'translateY(' + (y * -0.08) + 'px)'; ticking = false; });
+    }, { passive: true });
+  }
 
-  var sx = null, stage = document.querySelector('.lb-stage');
-  stage.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
-  stage.addEventListener('touchend', function (e) {
-    if (sx === null) return;
-    var dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
-    sx = null;
-  }, { passive: true });
+  var dlg = document.getElementById('dlg');
+  document.getElementById('belts').addEventListener('click', function (e) {
+    var card = e.target.closest('.build');
+    if (!card) return;
+    var b = BUILDS[+card.dataset.i];
+    document.getElementById('dlgTitle').textContent = b.title;
+    document.getElementById('dlgWhat').textContent = b.what;
+    document.getElementById('dlgHelp').textContent = b.help;
+    var img = document.getElementById('dlgImg');
+    img.src = 'assets/' + b.img + '.webp';
+    img.alt = 'Workflow screenshot: ' + b.title;
+    document.getElementById('dlgStack').innerHTML = b.stack.map(function (s) { return '<span class="pill">' + s + '</span>'; }).join('');
+    if (dlg.showModal) dlg.showModal();
+  });
+  document.getElementById('dlgClose').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
 })();
 </script>
-
 </body>
 </html>
