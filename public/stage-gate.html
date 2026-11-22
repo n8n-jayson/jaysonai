@@ -113,11 +113,14 @@
 <style>
   /* case study pages: page CSS only inside visuals, one --p-h per group */
   #run .panel { --p-h: 520px; }
+  /* a film sits whole in its panel, 16:10, never cropped */
+  #run .panel--film { position: relative; }
+  #run .film { position: absolute; inset: 0; margin: auto; display: block; height: calc(100% - 48px); width: auto; max-width: calc(100% - 48px); aspect-ratio: 16 / 10; border-radius: 12px; background: #0b0e14; }
   #changes .panel { --p-h: 520px; } #changes .panel--flush { --p-h: 424px; }
   #more .panel { --p-h: 352px; }
   @media (min-width: 640px) { #more > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
     #more > .wrap > .group { display: contents; } #more .section-head { grid-column: 1 / -1; } #more .grid { display: contents; } #more .card { grid-column: span 6; } }
-  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
+  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #run .panel--film { --p-h: 246px; } #run .film { height: auto; width: calc(100% - 32px); max-width: none; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
 
   /* phones: one drawing per width, pictures shown whole (phone.js sizes the panels and hero rows) */
   @media (min-width: 640px) { .phone-only { display: none; } }

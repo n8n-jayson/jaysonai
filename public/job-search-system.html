@@ -113,11 +113,14 @@
 <style>
   /* case study pages: page CSS only inside visuals, one --p-h per group */
   #run .panel { --p-h: 520px; }
+  /* a film sits whole in its panel, 16:10, never cropped */
+  #run .panel--film { position: relative; }
+  #run .film { position: absolute; inset: 0; margin: auto; display: block; height: calc(100% - 48px); width: auto; max-width: calc(100% - 48px); aspect-ratio: 16 / 10; border-radius: 12px; background: #0b0e14; }
   #changes .panel { --p-h: 520px; } #changes .panel--flush { --p-h: 424px; }
   #more .panel { --p-h: 352px; }
   @media (min-width: 640px) { #more > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
     #more > .wrap > .group { display: contents; } #more .section-head { grid-column: 1 / -1; } #more .grid { display: contents; } #more .card { grid-column: span 6; } }
-  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
+  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #run .panel--film { --p-h: 246px; } #run .film { height: auto; width: calc(100% - 32px); max-width: none; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
 
   /* phones: one drawing per width, pictures shown whole (phone.js sizes the panels and hero rows) */
   @media (min-width: 640px) { .phone-only { display: none; } }
@@ -200,20 +203,7 @@
         <h2 class="span-5" id="run-h">Six workflows around one Airtable base</h2>
         <p class="span-6 start-7 muted">The scraper saves each role to Airtable and posts the best fits to Slack. If the AI call fails, the roles are still saved, unscored. The other five workflows read the same base, so nothing is copied by hand.</p>
       </div>
-      <div class="panel wide-only" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "alt": "An Airtable base of leads at the centre, with six n8n workflows reading and writing to it.", "center": {"label": "Airtable leads", "icon": "airtable"}, "spokes": [{"label": "Job scraper", "icon": "n8n"}, {"label": "Reply tracker", "icon": "ui:mail-check"}, {"label": "Interview prep", "icon": "ui:file-text"}, {"label": "Follow-up drafts", "icon": "ui:message-square"}, {"label": "Weekly scorecard", "icon": "slack"}, {"label": "Funnel snapshot", "icon": "ui:layers"}]}</script></div></div>
-      <div class="panel phone-only" style="margin-top: var(--s-7)" role="img" aria-label="An Airtable base of leads at the centre, with six n8n workflows reading and writing to it."><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:24px;--ay-sm:24px">
-        <div class="ui ui-panel dl">
-          <div class="ui-head"><img class="dl__ic" src="assets/icons/airtable.svg" alt="" width="18" height="18"><div class="ui-title">Airtable leads</div><span class="ui-spacer"></span><span class="ui-meta">6 workflows</span></div>
-          <ul class="dl__list">
-          <li><img class="dl__ic" src="assets/icons/n8n.svg" alt="" width="18" height="18"><span>Job scraper</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-mail-check.svg)" aria-hidden="true"></span><span>Reply tracker</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-file-text.svg)" aria-hidden="true"></span><span>Interview prep</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-message-square.svg)" aria-hidden="true"></span><span>Follow-up drafts</span></li>
-          <li><img class="dl__ic" src="assets/icons/slack.svg" alt="" width="18" height="18"><span>Weekly scorecard</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-layers.svg)" aria-hidden="true"></span><span>Funnel snapshot</span></li>
-          </ul>
-        </div>
-      </div></div></div>
+      <div class="panel panel--film" style="margin-top: var(--s-7)"><video class="film" controls playsinline muted preload="none" poster="films/job-search-system-poster.jpg" width="1600" height="1000" aria-label="A 28-second silent film of the six n8n workflows: the scraper runs every 15 minutes, an AI model scores each role and drafts a proposal, roles are saved to Airtable and posted to Slack, replies and follow-ups are tracked, and about 765 runs in one November week had 0.5% fail."><source src="films/job-search-system.mp4" type="video/mp4"></video></div>
     </div>
   </section>
 
