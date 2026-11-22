@@ -239,20 +239,7 @@
         <h2 class="span-5" id="run-h">The gate: one check, two outcomes</h2>
         <p class="span-6 start-7 muted">The gate starts when a card moves into the late stage, and reads one field. On an accepted value the card carries on and the next system is told. Anything else, a blank included, sends the card back.</p>
       </div>
-      <div class="panel wide-only" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "free", "alt": "A job card enters a late stage, one field is checked, and the card either carries on or goes back one stage.", "nodes": [{"id": "card", "label": "Late stage", "icon": "ui:package", "meta": "Job card", "at": [0.17, 0.5], "atCompact": [0.5, 0.14]}, {"id": "chk", "label": "Field check", "icon": "ui:list-checks", "at": [0.47, 0.5], "atCompact": [0.5, 0.42]}, {"id": "ok", "label": "Carries on", "icon": "ui:check", "done": true, "at": [0.8, 0.29], "atCompact": [0.27, 0.74]}, {"id": "no", "label": "Sent back", "icon": "ui:x", "at": [0.8, 0.71], "atCompact": [0.73, 0.74]}], "edges": [{"from": "card", "to": "chk"}, {"from": "chk", "to": "ok", "curve": "elbow"}, {"from": "chk", "to": "no", "curve": "elbow", "idle": true}]}</script></div></div>
-      <div class="panel phone-only" style="margin-top: var(--s-7)" role="img" aria-label="The stage gate at the centre, connected to the job card it reads, the field check, the two outcomes, the owner&#x27;s task and the two texts."><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:24px;--ay-sm:24px">
-        <div class="ui ui-panel dl">
-          <div class="ui-head"><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-list-checks.svg)" aria-hidden="true"></span><div class="ui-title">Stage gate</div><span class="ui-spacer"></span><span class="ui-meta">Six parts</span></div>
-          <ul class="dl__list">
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-package.svg)" aria-hidden="true"></span><span>Job card</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-braces.svg)" aria-hidden="true"></span><span>Field check</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-check.svg)" aria-hidden="true"></span><span>Carries on</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-x.svg)" aria-hidden="true"></span><span>Sent back</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-file-text.svg)" aria-hidden="true"></span><span>Owner task</span></li>
-          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-message-square.svg)" aria-hidden="true"></span><span>Two texts</span></li>
-          </ul>
-        </div>
-      </div></div></div>
+      <div class="panel panel--film" style="margin-top: var(--s-7)"><video class="film" controls playsinline muted preload="none" poster="films/stage-gate-poster.jpg" width="1600" height="1000" aria-label="A 26-second silent film of the stage gate: a job card moves into a late stage, the gate reads one required field, a blank sends the card back one stage, the owner gets a task and a text, and the replaced workflow is kept as a labelled draft."><source src="films/stage-gate.mp4" type="video/mp4"></video></div>
     </div>
   </section>
 
