@@ -117,7 +117,21 @@
   #more .panel { --p-h: 352px; }
   @media (min-width: 640px) { #more > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
     #more > .wrap > .group { display: contents; } #more .section-head { grid-column: 1 / -1; } #more .grid { display: contents; } #more .card { grid-column: span 6; } }
-  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2) { display: none; }  }
+  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
+
+  /* phones: one drawing per width, pictures shown whole (phone.js sizes the panels and hero rows) */
+  @media (min-width: 640px) { .phone-only { display: none; } }
+  @media (max-width: 639px) { .wide-only { display: none; }
+    .hero__media > .stage--fade-b, main .card .stage--fade-b, #changes .stage--fade-b { -webkit-mask: none; mask: none; }
+    .hero__media .ui-win__body { min-height: 0; } }
+  /* the phone list (inside the picture panel) */
+  .dl { display: block; padding: 0; }
+  .dl > .ui-head { padding: 12px 16px; gap: 10px; border-bottom: 1px solid var(--u-line); }
+  .dl__list { list-style: none; margin: 0; padding: 4px 16px 6px; }
+  .dl__list > li { display: flex; align-items: center; gap: 12px; padding: 11px 0; font-size: 14px; line-height: 20px; color: var(--u-ink); }
+  .dl__list > li + li { border-top: 1px solid var(--u-line); }
+  .dl__ic { flex: none; width: 18px; height: 18px; }
+  .dl__ic--g { background: currentColor; color: var(--u-muted); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
 </style>
 </head>
 <body>
@@ -223,7 +237,20 @@
         <h2 class="span-5" id="run-h">Import, audit, then publish</h2>
         <p class="span-6 start-7 muted">Every imported workflow is opened and checked against one list before it is switched on. What passes is published. What has not been checked yet stays a draft, and a replaced version is renamed and kept.</p>
       </div>
-      <div class="panel" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "alt": "The import audit at the centre, connected to the six things it checks in every workflow: trigger links, webhooks, calendars, users, alerts and custom values.", "center": {"label": "Import audit", "icon": "ui:list-checks"}, "spokes": [{"label": "Trigger links", "icon": "ui:link"}, {"label": "Webhooks", "icon": "ui:webhook"}, {"label": "Calendars", "icon": "ui:calendar"}, {"label": "Users", "icon": "ui:users"}, {"label": "Alerts", "icon": "ui:bell-ring"}, {"label": "Custom values", "icon": "ui:braces"}]}</script></div></div>
+      <div class="panel wide-only" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "alt": "The import audit at the centre, connected to the six things it checks in every workflow: trigger links, webhooks, calendars, users, alerts and custom values.", "center": {"label": "Import audit", "icon": "ui:list-checks"}, "spokes": [{"label": "Trigger links", "icon": "ui:link"}, {"label": "Webhooks", "icon": "ui:webhook"}, {"label": "Calendars", "icon": "ui:calendar"}, {"label": "Users", "icon": "ui:users"}, {"label": "Alerts", "icon": "ui:bell-ring"}, {"label": "Custom values", "icon": "ui:braces"}]}</script></div></div>
+      <div class="panel phone-only" style="margin-top: var(--s-7)" role="img" aria-label="The import audit at the centre, connected to the six things it checks in every workflow: trigger links, webhooks, calendars, users, alerts and custom values."><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:24px;--ay-sm:24px">
+        <div class="ui ui-panel dl">
+          <div class="ui-head"><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-list-checks.svg)" aria-hidden="true"></span><div class="ui-title">Import audit</div><span class="ui-spacer"></span><span class="ui-meta">6 checks</span></div>
+          <ul class="dl__list">
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-link.svg)" aria-hidden="true"></span><span>Trigger links</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-webhook.svg)" aria-hidden="true"></span><span>Webhooks</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-calendar.svg)" aria-hidden="true"></span><span>Calendars</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-users.svg)" aria-hidden="true"></span><span>Users</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-bell-ring.svg)" aria-hidden="true"></span><span>Alerts</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-braces.svg)" aria-hidden="true"></span><span>Custom values</span></li>
+          </ul>
+        </div>
+      </div></div></div>
     </div>
   </section>
 
@@ -350,5 +377,6 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
+<script src="phone.js" defer></script>
 </body>
 </html>

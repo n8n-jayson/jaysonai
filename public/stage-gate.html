@@ -117,7 +117,21 @@
   #more .panel { --p-h: 352px; }
   @media (min-width: 640px) { #more > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
     #more > .wrap > .group { display: contents; } #more .section-head { grid-column: 1 / -1; } #more .grid { display: contents; } #more .card { grid-column: span 6; } }
-  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2) { display: none; }  }
+  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
+
+  /* phones: one drawing per width, pictures shown whole (phone.js sizes the panels and hero rows) */
+  @media (min-width: 640px) { .phone-only { display: none; } }
+  @media (max-width: 639px) { .wide-only { display: none; }
+    .hero__media > .stage--fade-b, main .card .stage--fade-b, #changes .stage--fade-b { -webkit-mask: none; mask: none; }
+    .hero__media .ui-win__body { min-height: 0; } }
+  /* the phone list (inside the picture panel) */
+  .dl { display: block; padding: 0; }
+  .dl > .ui-head { padding: 12px 16px; gap: 10px; border-bottom: 1px solid var(--u-line); }
+  .dl__list { list-style: none; margin: 0; padding: 4px 16px 6px; }
+  .dl__list > li { display: flex; align-items: center; gap: 12px; padding: 11px 0; font-size: 14px; line-height: 20px; color: var(--u-ink); }
+  .dl__list > li + li { border-top: 1px solid var(--u-line); }
+  .dl__ic { flex: none; width: 18px; height: 18px; }
+  .dl__ic--g { background: currentColor; color: var(--u-muted); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
 </style>
 </head>
 <body>
@@ -222,7 +236,20 @@
         <h2 class="span-5" id="run-h">The gate: one check, two outcomes</h2>
         <p class="span-6 start-7 muted">The gate starts when a card moves into the late stage, and reads one field. On an accepted value the card carries on and the next system is told. Anything else, a blank included, sends the card back.</p>
       </div>
-      <div class="panel" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "alt": "The stage gate at the centre, connected to the job card it reads, the field check, the two outcomes, the owner's task and the two texts.", "center": {"label": "Stage gate", "icon": "ui:list-checks"}, "spokes": [{"label": "Job card", "icon": "ui:package"}, {"label": "Field check", "icon": "ui:braces"}, {"label": "Carries on", "icon": "ui:check"}, {"label": "Sent back", "icon": "ui:x"}, {"label": "Owner task", "icon": "ui:file-text"}, {"label": "Two texts", "icon": "ui:message-square"}]}</script></div></div>
+      <div class="panel wide-only" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "free", "alt": "A job card enters a late stage, one field is checked, and the card either carries on or goes back one stage.", "nodes": [{"id": "card", "label": "Late stage", "icon": "ui:package", "meta": "Job card", "at": [0.17, 0.5], "atCompact": [0.5, 0.14]}, {"id": "chk", "label": "Field check", "icon": "ui:list-checks", "at": [0.47, 0.5], "atCompact": [0.5, 0.42]}, {"id": "ok", "label": "Carries on", "icon": "ui:check", "done": true, "at": [0.8, 0.29], "atCompact": [0.27, 0.74]}, {"id": "no", "label": "Sent back", "icon": "ui:x", "at": [0.8, 0.71], "atCompact": [0.73, 0.74]}], "edges": [{"from": "card", "to": "chk"}, {"from": "chk", "to": "ok", "curve": "elbow"}, {"from": "chk", "to": "no", "curve": "elbow", "idle": true}]}</script></div></div>
+      <div class="panel phone-only" style="margin-top: var(--s-7)" role="img" aria-label="The stage gate at the centre, connected to the job card it reads, the field check, the two outcomes, the owner&#x27;s task and the two texts."><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:24px;--ay-sm:24px">
+        <div class="ui ui-panel dl">
+          <div class="ui-head"><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-list-checks.svg)" aria-hidden="true"></span><div class="ui-title">Stage gate</div><span class="ui-spacer"></span><span class="ui-meta">Six parts</span></div>
+          <ul class="dl__list">
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-package.svg)" aria-hidden="true"></span><span>Job card</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-braces.svg)" aria-hidden="true"></span><span>Field check</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-check.svg)" aria-hidden="true"></span><span>Carries on</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-x.svg)" aria-hidden="true"></span><span>Sent back</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-file-text.svg)" aria-hidden="true"></span><span>Owner task</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-message-square.svg)" aria-hidden="true"></span><span>Two texts</span></li>
+          </ul>
+        </div>
+      </div></div></div>
     </div>
   </section>
 
@@ -271,7 +298,7 @@
           <article class="card card--row span-6">
             <h3>Audited GoHighLevel imports before launch</h3>
             <p>A snapshot import brings about 130 workflows. Each stays a draft until it has been checked. <a class="link" href="import-audit.html">Read the import audit</a></p>
-            <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:calc(100% - 230px);--ay-sm:calc(100% - 200px)">
+            <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:calc(100% - 230px);--ay-sm:24px">
 <div class="ui ui-panel ui-checks" data-ui="checklist">
   <div class="ui-checks__head">
     <div class="ui-title">Import audit</div>
@@ -336,5 +363,6 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
+<script src="phone.js" defer></script>
 </body>
 </html>

@@ -117,7 +117,21 @@
   #more .panel { --p-h: 352px; }
   @media (min-width: 640px) { #more > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
     #more > .wrap > .group { display: contents; } #more .section-head { grid-column: 1 / -1; } #more .grid { display: contents; } #more .card { grid-column: span 6; } }
-  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2) { display: none; }  }
+  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2), #changes .tk__meta, #changes .tk__s { display: none; }  }
+
+  /* phones: one drawing per width, pictures shown whole (phone.js sizes the panels and hero rows) */
+  @media (min-width: 640px) { .phone-only { display: none; } }
+  @media (max-width: 639px) { .wide-only { display: none; }
+    .hero__media > .stage--fade-b, main .card .stage--fade-b, #changes .stage--fade-b { -webkit-mask: none; mask: none; }
+    .hero__media .ui-win__body { min-height: 0; } }
+  /* the phone list (inside the picture panel) */
+  .dl { display: block; padding: 0; }
+  .dl > .ui-head { padding: 12px 16px; gap: 10px; border-bottom: 1px solid var(--u-line); }
+  .dl__list { list-style: none; margin: 0; padding: 4px 16px 6px; }
+  .dl__list > li { display: flex; align-items: center; gap: 12px; padding: 11px 0; font-size: 14px; line-height: 20px; color: var(--u-ink); }
+  .dl__list > li + li { border-top: 1px solid var(--u-line); }
+  .dl__ic { flex: none; width: 18px; height: 18px; }
+  .dl__ic--g { background: currentColor; color: var(--u-muted); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
 </style>
 </head>
 <body>
@@ -225,7 +239,19 @@
         <h2 class="span-5" id="run-h">A dashboard kept current by an agent</h2>
         <p class="span-6 start-7 muted">A scheduled Claude agent reads the team's Slack, moves the tasks that changed and rewrites their details. The record of each check stays in the task. It runs as scheduled tasks on my own Claude account: a working setup, not a product.</p>
       </div>
-      <div class="panel" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "alt": "The scheduled agent at the centre, connected to the team chat it reads and to the board, the task details, the change log and the check records it writes.", "center": {"label": "Scheduled agent", "icon": "claude"}, "spokes": [{"label": "Team chat", "icon": "slack"}, {"label": "Task board", "icon": "ui:layers"}, {"label": "Task details", "icon": "ui:file-text"}, {"label": "Change log", "icon": "ui:history"}, {"label": "Check records", "icon": "ui:list-checks"}]}</script></div></div>
+      <div class="panel wide-only" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "lanes", "alt": "The team chat feeds a scheduled agent, which moves the task, rewrites its details and logs the check.", "input": {"label": "Team chat", "icon": "slack", "sub": "Slack channels"}, "core": {"label": "Scheduled agent", "icon": "claude"}, "lanes": [{"label": "Moves the task", "icon": "ui:check", "sub": "To its new status", "done": true}, {"label": "Rewrites details", "icon": "ui:file-text", "sub": "From what was said", "done": true}, {"label": "Logs the check", "icon": "ui:list-checks", "sub": "In the task history", "done": true}]}</script></div></div>
+      <div class="panel phone-only" style="margin-top: var(--s-7)" role="img" aria-label="The scheduled agent at the centre, connected to the team chat it reads and to the board, the task details, the change log and the check records it writes."><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:24px;--ay-sm:24px">
+        <div class="ui ui-panel dl">
+          <div class="ui-head"><img class="dl__ic" src="assets/icons/claude.svg" alt="" width="18" height="18"><div class="ui-title">Scheduled agent</div><span class="ui-spacer"></span><span class="ui-meta">5 connections</span></div>
+          <ul class="dl__list">
+          <li><img class="dl__ic" src="assets/icons/slack.svg" alt="" width="18" height="18"><span>Team chat</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-layers.svg)" aria-hidden="true"></span><span>Task board</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-file-text.svg)" aria-hidden="true"></span><span>Task details</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-history.svg)" aria-hidden="true"></span><span>Change log</span></li>
+          <li><span class="dl__ic dl__ic--g" style="--i: url(assets/icons/ui-list-checks.svg)" aria-hidden="true"></span><span>Check records</span></li>
+          </ul>
+        </div>
+      </div></div></div>
     </div>
   </section>
 
@@ -347,7 +373,7 @@
           <article class="card card--row span-6">
             <h3>Built a stage gate in GoHighLevel</h3>
             <p>A job card cannot stay in a late stage while a required field is blank. <a class="link" href="stage-gate.html">Read the stage gate build</a></p>
-            <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:calc(100% - 200px);--ay-sm:calc(100% - 180px)">
+            <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:calc(100% - 200px);--ay-sm:24px">
 <div class="ui ui-notify" data-ui="notify">
   <ul class="ui-notify__list" data-notify-list>
     <li class="ui-note"><span class="ui-agent ui-note__av" aria-hidden="true"></span><span class="ui-note__text"><span class="ui-note__title">Card sent back one stage<time>now</time></span><span class="ui-note__body">A required field is blank</span></span></li>
@@ -396,5 +422,6 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
+<script src="phone.js" defer></script>
 </body>
 </html>
