@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft" data-ground="sand" data-buttons="arrow" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Three weeks running an agency's operations | JT Flowops</title>
+<meta name="description" content="What Jayson Tolentino set up in his first three weeks as operations manager for a nine-person video marketing agency: a team dashboard, three SOPs and an AI agent that keeps the board current.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Three weeks running an agency&#x27;s operations | JT Flowops">
+<meta property="og:description" content="What Jayson Tolentino set up in his first three weeks as operations manager for a nine-person video marketing agency: a team dashboard, three SOPs and an AI agent that keeps the board current.">
+<meta property="og:image" content="https://jtflowops.onrender.com/share.jpg">
+<meta property="og:url" content="https://jtflowops.onrender.com/ops-dashboard.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<meta name="theme-color" content="#0b0e14">
+<link rel="canonical" href="https://jtflowops.onrender.com/ops-dashboard.html">
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+@font-face { font-family: "Manrope"; src: url("fonts/manrope-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fonts/manrope-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fonts/manrope-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fonts/manrope-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+:root {
+  --p-bg: #0b0e14; --p-surface: #161b24; --p-ink: #f2efe8; --p-muted: #a39d91;
+  --p-accent: #eb921a; --p-accent-ink: #0b0e14; --p-action: #eb921a; --p-action-ink: #0b0e14;
+  --p-inv-bg: #f2efe8; --p-inv-surface: #dfddd7; --p-inv-ink: #0b0e14; --p-inv-muted: #57595c;
+  --p-inv-accent: #0b0e14; --p-inv-accent-ink: #f2efe8; --p-inv-action: #0b0e14; --p-inv-action-ink: #f2efe8;
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-text: "Manrope", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.04em;
+}
+</style>
+<link rel="stylesheet" href="assets/ui/base.css">
+<link rel="stylesheet" href="assets/ui/window/fragment.css">
+<link rel="stylesheet" href="assets/ui/cursor/fragment.css">
+<link rel="stylesheet" href="assets/ui/notify/fragment.css">
+<link rel="stylesheet" href="assets/ui/pipeline-board/fragment.css">
+<link rel="stylesheet" href="assets/ui/checklist/fragment.css">
+<link rel="stylesheet" href="assets/diagrams/diagram.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<style>
+  /* hero: three facts docked at the foot of the text column, on the picture's bottom line; desktop only */
+  .hero__dock { display: none; }
+  @media (min-width: 1280px) and (min-height: 800px) { .hero--split .hero__text { align-self: stretch; display: flex; flex-direction: column; } .hero__dock { display: block; } }
+  /* hero: the dialog lies over the queued rows only where the panel is tall enough to keep the rows being checked in view */
+  .hero .stage > .at-over { display: none; }
+  @media (min-width: 1280px) and (min-height: 860px) { .hero .stage > .at-over { display: block; } }
+  /* page CSS: only inside visuals, and one --p-h per card group */
+  .nav__logo img { height: 30px; width: auto; display: block; }
+  #work .panel, #systems .panel { --p-h: 352px; }
+  #tools .panel { --p-h: 520px; }
+  @media (min-width: 640px) { #work > .wrap, #systems > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
+    #work > .wrap > .group, #systems > .wrap > .group { display: contents; }
+    #work .section-head, #systems .section-head { grid-column: 1 / -1; }
+    #work .grid, #systems .grid { display: contents; }
+    #work .card, #systems .card { grid-column: span 6; } }
+  @media (max-width: 639px) { #work .panel { --p-h: 350px; } #systems .panel { --p-h: 300px; } #tools .panel { --p-h: 400px; }
+    #faq .faq__item:nth-child(n+5) { display: none; } .tk__row:nth-child(n+5) { display: none; }
+    #about .rows { display: none; } #about .grid.fill { flex: none; } #about .frame { aspect-ratio: auto; height: 362px; min-height: 0; flex: none; }
+    #faq p.muted { display: none; } .closing .footer__lede { display: none; } }
+  /* app-frame (sections-library.md) */
+  .app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+  .app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+  .app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+  .app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+  .app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+  @media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+  @media (max-width: 1023px) {
+    .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+    .app > .app__pane--list { max-height: 252px; }
+    .app > .app__pane--list::after { display: none; }
+    .app .ui-win__side { display: none; }
+    .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+    .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+  }
+  @media (max-width: 639px) {
+    .app.ui { grid-template-rows: minmax(0, 1fr); }
+    .app > .app__pane--list { display: none; }
+    .app > .app__pane + .app__pane { border-top: 0; }
+  }
+  /* the open task (inside the app window) */
+  .tk { display: block; padding: 0; }
+  .tk > .ui-head { padding: 14px 20px; border-bottom: 1px solid var(--u-line); }
+  .tk__meta { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 12px 20px 0; font-size: 13px; line-height: 18px; color: var(--u-muted); }
+  .tk__acts { display: flex; align-items: center; gap: 8px; padding: 12px 20px 14px; border-bottom: 1px solid var(--u-line); }
+  .tk__list { list-style: none; margin: 0; padding: 4px 20px 0; }
+  .tk__row { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--u-line); }
+  .tk__row > .ui-avatar, .tk__ag { flex: none; margin-top: 2px; }
+  .tk__b { min-width: 0; display: grid; gap: 3px; }
+  .tk__b p { margin: 0; }
+  .tk__l { font-size: 14px; line-height: 20px; color: var(--u-ink); }
+  .tk__l b { font-weight: 600; }
+  .tk__l .ui-chip { margin-left: 6px; vertical-align: 1px; }
+  .tk__m, .tk__s { font-size: 13px; line-height: 18px; color: var(--u-muted); }
+  .tk__c { font-size: 13px; line-height: 18px; color: var(--u-text-2, var(--u-ink)); font-family: var(--font-mono); }
+  .tk__n { font-size: 14px; line-height: 20px; color: var(--u-text-2, var(--u-ink)); }
+</style>
+<style>
+  /* case study pages: page CSS only inside visuals, one --p-h per group */
+  #run .panel { --p-h: 520px; }
+  #changes .panel { --p-h: 520px; } #changes .panel--flush { --p-h: 424px; }
+  #more .panel { --p-h: 352px; }
+  @media (min-width: 640px) { #more > .wrap { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-5); align-content: start; }
+    #more > .wrap > .group { display: contents; } #more .section-head { grid-column: 1 / -1; } #more .grid { display: contents; } #more .card { grid-column: span 6; } }
+  @media (max-width: 639px) { #run .panel { --p-h: 400px; } #changes .panel { --p-h: 360px; } #changes .panel--flush { --p-h: 240px; } #more .panel { --p-h: 320px; } #changes .tk__row:nth-child(n+2) { display: none; }  }
+</style>
+</head>
+<body>
+<!-- type: software
+     deal: hero split, nav nav-centre, close close-type, footer footer-dark (dealt footer-statement: the client logo is white lettering and does not read on the lit ground, so it was dealt again), rhythm space, buttons arrow, mark the client's own logo, grounds none
+     palette: the client's own colours through start.mjs brand (midnight ink, cream, JT orange), because the logo and the live site already carry them
+     type: Manrope, the client's brand face (self-hosted), JetBrains Mono inside UI
+     moments: word-highlight in #method -->
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="index.html"><img src="img/logo.png" alt="JT Flowops" width="108" height="30"></a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item">
+        <a class="nav__link" href="index.html#work">Builds <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav__menu">
+          <div class="wrap grid">
+            <div class="menu-col span-4">
+              <p class="t-label">Client builds</p>
+              <a href="seminar.html">Seminar build<span>Seven workflows, fixed-date reminders</span></a>
+              <a href="stage-gate.html">Stage gate<span>Stops a card with a blank field</span></a>
+              <a href="import-audit.html">Import audit<span>Nothing live until checked</span></a>
+            </div>
+            <div class="menu-col span-4">
+              <p class="t-label">Own systems</p>
+              <a href="job-search-system.html">Job search system<span>Six n8n workflows, AI scoring</span></a>
+              <a href="ops-dashboard.html">Operations dashboard<span>Board, approvals, change log</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item"><a class="nav__link" href="index.html#app">Operations</a></div>
+      <div class="nav__item"><a class="nav__link" href="index.html#tools">Tools</a></div>
+      <div class="nav__item"><a class="nav__link" href="index.html#faq">Questions</a></div>
+      <div class="nav__item"><a class="nav__link" href="index.html#about">About</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+<main id="top">
+  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text span-5">
+        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Demo workspace</p>
+        <h1 id="hero-h">Three weeks running an agency's operations</h1>
+        <p class="hero__lead">My first three weeks as operations manager for a nine-person video marketing agency: a team dashboard, three SOPs and an AI agent that keeps the board current.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">Book a call<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="https://jtflow-opsdb.onrender.com/" target="_blank" rel="noopener">Open the demo</a></div>
+        <div class="hero__dock"><dl class="hero__facts hero__facts--col">
+          <div><dt>People on the dashboard</dt><dd>9</dd></div>
+          <div><dt>Tasks tracked on 21 Nov 2026</dt><dd>93</dd></div>
+          <div><dt>SOPs the team works from</dt><dd>3</dd></div>
+        </dl></div>
+      </div>
+      <div class="hero__media panel span-6 start-7" style="--p-h: 100%" role="img" aria-label="The demo board as a list: tasks with their owners and statuses, from To do through For approval to Done.">
+        <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:720px;--ax:max(24px, 50% - 360px);--ay:40px;--ay-sm:24px">
+<div class="ui ui-panel ui-win" data-ui="window" data-ui-opts='{"compact":true}' data-open="To do" data-work="In progress" data-done="Done">
+  <div class="ui-win__bar">
+    <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="ui-win__crumb"><svg class="ui-brand" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 195"><g> <path d="M118.249172,51.2326115 L118.249172,194.005605 L0,194.005605 L118.249172,51.2326115 Z M118.249172,2.84217094e-14 C118.249172,32.6440764 91.7686624,59.124586 59.124586,59.124586 C26.4805096,59.124586 0,32.6440764 0,2.84217094e-14 L118.249172,2.84217094e-14 Z M137.750828,194.005605 C137.750828,161.328917 164.198726,134.881019 196.875414,134.881019 C229.552102,134.881019 256,161.361529 256,194.005605 L137.750828,194.005605 Z M137.750828,142.740382 L137.750828,0 L256,0 L137.750828,142.740382 Z" fill="currentColor"></path> </g></svg>Operations <i>/</i> <b>Board</b></span>
+    <span class="ui-spacer"></span>
+    <span class="ui-win__search" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-win__ph">Search</span><span class="ui-kbd">/</span></span>
+  </div>
+  <div class="ui-win__body">
+    <nav class="ui-win__side" aria-hidden="true">
+      <span class="ui-win__nav is-on"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 9h3l1 1.5h3l1-1.5h3"/><path d="M2.5 9 4 3.5h8L13.5 9v3.5h-11z"/></svg>Open<em>31</em></span>
+      <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="6" r="2.5"/><path d="M3.5 13.5c.6-2.3 2.4-3.5 4.5-3.5s3.9 1.2 4.5 3.5"/></svg>Mine<em>8</em></span>
+      <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3l2 1.5"/></svg>Waiting<em>10</em></span>
+      <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>Approval<em>2</em></span>
+      <span class="ui-win__label">Clients</span>
+      <span class="ui-win__nav"><span class="ui-win__hash">#</span>Dental</span>
+      <span class="ui-win__nav"><span class="ui-win__hash">#</span>Roofing</span>
+    </nav>
+    <div class="ui-win__main">
+      <div class="ui-win__cols" aria-hidden="true"><span>Owner</span><span>Task</span><span>Status</span><span>Age</span></div>
+      <ul class="ui-win__rows">
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">MC</span><span class="ui-win__who">Maya Chen</span><span class="ui-win__sub">Before and after reel</span><span class="ui-win__st is-you" data-st>For approval</span><span class="ui-win__age">2m</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">JT</span><span class="ui-win__who">Jayson Tolentino</span><span class="ui-win__sub">Confirm venue capacity</span><span class="ui-win__st" data-st>Waiting</span><span class="ui-win__age">14m</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">SO</span><span class="ui-win__who">Sam Okafor</span><span class="ui-win__sub">Storm-season quote funnel</span><span class="ui-win__st" data-st>In progress</span><span class="ui-win__age">1h</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">PN</span><span class="ui-win__who">Priya Nair</span><span class="ui-win__sub">Instagram partner access</span><span class="ui-win__st" data-st>Waiting</span><span class="ui-win__age">2h</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">LS</span><span class="ui-win__who">Leo Santos</span><span class="ui-win__sub">Seminar reminder emails</span><span class="ui-win__st" data-st>In progress</span><span class="ui-win__age">3h</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">MC</span><span class="ui-win__who">Maya Chen</span><span class="ui-win__sub">Patient testimonial edit</span><span class="ui-win__st is-you" data-st>For approval</span><span class="ui-win__age">1d</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">SO</span><span class="ui-win__who">Sam Okafor</span><span class="ui-win__sub">Review request texts</span><span class="ui-win__st" data-st>Revision</span><span class="ui-win__age">1d</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">JT</span><span class="ui-win__who">Jayson Tolentino</span><span class="ui-win__sub">A2P registration</span><span class="ui-win__st" data-st>Waiting</span><span class="ui-win__age">2d</span></li>
+<li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">AC</span><span class="ui-win__who">Ana Cruz</span><span class="ui-win__sub">Booking calendar hours</span><span class="ui-win__st" data-st>Waiting</span><span class="ui-win__age">2d</span></li>
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="run" aria-labelledby="run-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <h2 class="span-5" id="run-h">A dashboard kept current by an agent</h2>
+        <p class="span-6 start-7 muted">A scheduled Claude agent reads the team's Slack, moves the tasks that changed and rewrites their details. The record of each check stays in the task. It runs as scheduled tasks on my own Claude account: a working setup, not a product.</p>
+      </div>
+      <div class="panel" style="margin-top: var(--s-7)"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout": "hub", "alt": "The scheduled agent at the centre, connected to the team chat it reads and to the board, the task details, the change log and the check records it writes.", "center": {"label": "Scheduled agent", "icon": "claude"}, "spokes": [{"label": "Team chat", "icon": "slack"}, {"label": "Task board", "icon": "ui:layers"}, {"label": "Task details", "icon": "ui:file-text"}, {"label": "Change log", "icon": "ui:history"}, {"label": "Check records", "icon": "ui:list-checks"}]}</script></div></div>
+    </div>
+  </section>
+
+  <section class="section statement" id="proof" data-moment="word-highlight" aria-label="What the dashboard records">
+    <div class="wrap">
+      <p class="t-label">What the dashboard records</p>
+      <p class="mo-wh__text">On 21 November 2026 the live dashboard tracked 93 tasks and 16 client records for nine people. <strong>Every change is logged</strong> with who made it, the old value and the new one, and the entries made by the agent are marked as the agent's.</p>
+    </div>
+  </section>
+
+  <section class="section" id="changes" aria-labelledby="changes-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 stack-5">
+          <h2 id="changes-h">Operations work in the first three weeks</h2>
+          <p class="t-lead">The role began in early November 2026. The live dashboard belongs to the agency, so this page shows the demo workspace.</p>
+          <ul class="rows">
+            <li><span class="rows__name">Dashboard</span><p>Built in Lovable, in daily use since 16 November.</p></li>
+            <li><span class="rows__name">Three SOPs</span><p>Taking on a client, the funnel pre-launch check, the creative check.</p></li>
+            <li><span class="rows__name">Event funnel</span><p>Taken over about two weeks before the date.</p></li>
+            <li><span class="rows__name">Next</span><p>A trend line, once four weekly counts exist.</p></li>
+          </ul>
+          <p><a class="link" href="https://jtflow-opsdb.onrender.com/" target="_blank" rel="noopener">Open the demo workspace</a></p>
+        </div>
+        <div class="panel span-6 start-7" role="img" aria-label="One open task in the demo workspace with its history: the scheduled agent moved it to For approval and recorded what it saw, after a teammate changed the details."><div class="stage"><div class="at-rise fit" style="--fit-max:480px;--ax:max(24px, 50% - 240px);--ay:56px;--ay-sm:24px">
+<div class="ui ui-panel tk">
+        <div class="ui-head"><div class="ui-title">Before and after reel</div><span class="ui-spacer"></span><span class="ui-chip ui-chip--accent">For approval</span></div>
+        <div class="tk__meta"><span>Nova Skin Clinic</span><span>Maya Chen</span><span>Due today</span><span>Medium</span></div>
+        <div class="tk__acts"><span class="ui-btn ui-btn--accent ui-btn--sm">Approve</span><span class="ui-btn ui-btn--ghost ui-btn--sm">Request changes</span><span class="ui-spacer"></span><span class="ui-meta">History</span></div>
+        <ul class="tk__list">
+          <li class="tk__row">
+            <span class="ui-agent tk__ag" aria-hidden="true"></span>
+            <div class="tk__b">
+              <p class="tk__l"><b>Ops agent</b> moved this task to <b>For approval</b> <span class="ui-chip ui-chip--accent ui-chip--plain">Agent</span></p>
+              <p class="tk__m">Today 8:46</p>
+              <p class="tk__c">Status: In progress to For approval</p>
+              <p class="tk__n">Maya posted the 9:16 export in the editing channel and said it is ready for review. Review link added.</p>
+              <p class="tk__s">Team chat, #editing</p>
+            </div>
+          </li>
+<li class="tk__row">
+            <span class="ui-avatar" data-tone="4">MC</span>
+            <div class="tk__b">
+              <p class="tk__l"><b>Maya Chen</b> changed the details</p>
+              <p class="tk__m">Yesterday 16:10</p>
+              
+              <p class="tk__n">Captions burned in. Client consent forms on file.</p>
+              
+            </div>
+          </li>
+
+
+
+
+        </ul>
+      </div>
+</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section g2m" id="more" aria-labelledby="more-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="more-h">Two more builds. <span class="muted">Each is described as it ran.</span></h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row span-6">
+            <h3>Took over a live seminar build</h3>
+            <p>Rebuilt the reminders and added a waitlist about two weeks before a law firm's seminar. <a class="link" href="seminar.html">Read the seminar build</a></p>
+            <div class="panel panel--flush"><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:32px;--ay-sm:24px">
+<div class="ui ui-panel ui-pipe" data-ui="pipeline-board">
+  <div class="ui-pipe__head">
+    <svg class="ui-icon ui-pipe__branch" viewBox="0 0 16 16" aria-hidden="true"><circle cx="4.5" cy="3.5" r="1.5"/><circle cx="4.5" cy="12.5" r="1.5"/><circle cx="11.5" cy="5" r="1.5"/><path d="M4.5 5v6M11.5 6.5c0 2.6-2.2 3.6-5.6 4.6"/></svg>
+    <span class="ui-pipe__repo">Seminar</span><i class="ui-pipe__slash">/</i><code class="ui-pipe__ref">Registration</code>
+    <span class="ui-pipe__run">1 of 7</span>
+    <span class="ui-spacer"></span>
+    <span class="ui-pipe__total"><svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8.5" r="5.5"/><path d="M8 5.5v3l2 1.25M6.5 1.75h3"/></svg><span data-pipe-total>1m 22s</span></span>
+    <span class="ui-chip ui-chip--ink ui-chip--live ui-pipe__chip" data-pipe-chip data-done="No failures">Running</span>
+  </div>
+  <div class="ui-pipe__commit">
+    <span class="ui-avatar" data-tone="2">JT</span>
+    <span class="ui-pipe__msg">Registration and reminders</span>
+    <code class="ui-pipe__sha">Published</code>
+    <button class="ui-btn ui-btn--ghost ui-btn--sm ui-pipe__btn" type="button" tabindex="-1" data-pipe-btn data-done="Run again">Pause</button>
+  </div>
+  <ol class="ui-pipe__steps">
+<li class="ui-pipe__step is-done" data-step="form"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__nm">Form submitted</span></span><code class="ui-pipe__cmd">tag registered</code><span class="ui-pipe__time" data-time>1s</span><span class="ui-pipe__bar"><i></i></span></li>
+<li class="ui-pipe__step is-done" data-step="confirm"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__nm">Confirmation email</span></span><code class="ui-pipe__cmd">sent at once</code><span class="ui-pipe__time" data-time>2s</span><span class="ui-pipe__bar"><i></i></span></li>
+<li class="ui-pipe__step is-run" data-step="optin" style="--k:0.6"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__nm">Text consent check</span></span><code class="ui-pipe__cmd">wait 2 min</code><span class="ui-pipe__time" data-time="2m 00s">1m 10s</span><span class="ui-pipe__bar"><i></i></span></li>
+<li class="ui-pipe__step" data-step="sms"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__nm">First text</span></span><code class="ui-pipe__cmd">SMS 1</code><span class="ui-pipe__time" data-time="1s">Queued</span><span class="ui-pipe__bar"><i></i></span></li>
+<li class="ui-pipe__step" data-step="remind"><span class="ui-pipe__ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-pipe__name"><span class="ui-pipe__nm">Reminder email</span></span><code class="ui-pipe__cmd">7 days before</code><span class="ui-pipe__time" data-time="2s">Queued</span><span class="ui-pipe__bar"><i></i></span></li>
+  </ol>
+  <div class="ui-pipe__log" aria-hidden="true">
+    <span class="ui-pipe__line" data-step="form"><b>&rsaquo;</b>Registration form submitted</span>
+    <span class="ui-pipe__line" data-step="form">Tag added: registered</span>
+    <span class="ui-pipe__line" data-step="form">Office alert sent</span>
+    <span class="ui-pipe__line" data-step="confirm"><b>&rsaquo;</b>Confirmation email: executed</span>
+    <span class="ui-pipe__line" data-step="confirm">Reply-to is the office inbox</span>
+    <span class="ui-pipe__line" data-step="confirm">Delivered</span>
+    <span class="ui-pipe__line is-on" data-step="optin"><b>&rsaquo;</b>Wait 2 minutes</span>
+    <span class="ui-pipe__line is-on" data-step="optin">Consent box was ticked</span>
+    <span class="ui-pipe__line is-on" data-step="optin">Texting stays on</span>
+    <span class="ui-pipe__line" data-step="sms"><b>&rsaquo;</b>First text: executed</span>
+    <span class="ui-pipe__line" data-step="sms">Sent from the registered number</span>
+    <span class="ui-pipe__line" data-step="sms">Wait until 7 days before</span>
+    <span class="ui-pipe__line" data-step="remind"><b>&rsaquo;</b>Reminder email: executed</span>
+    <span class="ui-pipe__line" data-step="remind">Next wait: 2 days before</span>
+    <span class="ui-pipe__line" data-step="remind">Failed steps: 0</span>
+  </div>
+</div>
+
+</div></div></div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+          <article class="card card--row span-6">
+            <h3>Built a stage gate in GoHighLevel</h3>
+            <p>A job card cannot stay in a late stage while a required field is blank. <a class="link" href="stage-gate.html">Read the stage gate build</a></p>
+            <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:calc(100% - 200px);--ay-sm:calc(100% - 180px)">
+<div class="ui ui-notify" data-ui="notify">
+  <ul class="ui-notify__list" data-notify-list>
+    <li class="ui-note"><span class="ui-agent ui-note__av" aria-hidden="true"></span><span class="ui-note__text"><span class="ui-note__title">Card sent back one stage<time>now</time></span><span class="ui-note__body">A required field is blank</span></span></li>
+    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Task for the owner<time>now</time></span><span class="ui-note__body">Fill in the missing field</span></span></li>
+    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Texts sent<time>1m</time></span><span class="ui-note__body">Owner and production lead</span></span></li>
+  </ul>
+</div>
+
+</div></div></div>
+          </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer closing footer--dark" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Book a 30-minute call</h2>
+        <p>Free. We walk through your accounts and where the work piles up.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="https://calendly.com/jtolentino29/book-your-free-30-min-discovery-call" target="_blank" rel="noopener">Book a call<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="index.html"><img src="img/logo.png" alt="JT Flowops" width="108" height="30" loading="lazy"></a>
+          <p class="footer__lede">GoHighLevel builds, operations and AI automations for marketing agencies.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Work</h3><ul><li><a href="index.html#work">Builds</a></li><li><a href="index.html#app">Operations</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Method</h3><ul><li><a href="index.html#method">Handover</a></li><li><a href="index.html#tools">Tools</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Jayson</h3><ul><li><a href="index.html#faq">Questions</a></li><li><a href="index.html#about">About</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Elsewhere</h3><ul><li><a href="https://www.instagram.com/jaysonautomation/" target="_blank" rel="noopener">Instagram</a></li><li><a href="img/Jayson-Tolentino-Resume.pdf">Resume</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Jayson Tolentino</span>
+        <div class="socials"></div>
+        <span class="credits">Product names and logos are trademarks of their owners</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="assets/diagrams/mount.js"></script>
+</body>
+</html>

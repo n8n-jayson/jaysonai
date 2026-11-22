@@ -69,7 +69,7 @@
     #work .section-head, #systems .section-head { grid-column: 1 / -1; }
     #work .grid, #systems .grid { display: contents; }
     #work .card, #systems .card { grid-column: span 6; } }
-  @media (max-width: 639px) { #work .panel { --p-h: 350px; } #systems .panel { --p-h: 300px; } #tools .panel { --p-h: 400px; }
+  @media (max-width: 639px) { #work .panel { --p-h: 334px; } #systems .panel { --p-h: 300px; } #tools .panel { --p-h: 400px; }
     #faq .faq__item:nth-child(n+5) { display: none; } .tk__row:nth-child(n+5) { display: none; }
     #about .rows { display: none; } #about .grid.fill { flex: none; } #about .frame { aspect-ratio: auto; height: 362px; min-height: 0; flex: none; }
     #faq p.muted { display: none; } .closing .footer__lede { display: none; } }
@@ -128,14 +128,14 @@
           <div class="wrap grid">
             <div class="menu-col span-4">
               <p class="t-label">Client builds</p>
-              <a href="#work">Seminar build<span>Seven workflows, fixed-date reminders</span></a>
-              <a href="#work">Stage gate<span>Stops a card with a blank field</span></a>
-              <a href="#systems">Import audit<span>Nothing live until checked</span></a>
+              <a href="seminar.html">Seminar build<span>Seven workflows, fixed-date reminders</span></a>
+              <a href="stage-gate.html">Stage gate<span>Stops a card with a blank field</span></a>
+              <a href="import-audit.html">Import audit<span>Nothing live until checked</span></a>
             </div>
             <div class="menu-col span-4">
               <p class="t-label">Own systems</p>
-              <a href="#systems">Job search system<span>Six n8n workflows, AI scoring</span></a>
-              <a href="#app">Operations dashboard<span>Board, approvals, change log</span></a>
+              <a href="job-search-system.html">Job search system<span>Six n8n workflows, AI scoring</span></a>
+              <a href="ops-dashboard.html">Operations dashboard<span>Board, approvals, change log</span></a>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@
     <div class="wrap">
       <div class="grid grid--top">
         <h2 class="span-5" id="app-h">Team operations in one window</h2>
-        <div class="span-6 start-7 stack-3"><p class="muted">Tasks, approvals and clients sit on one board. A scheduled AI agent reads the team chat, moves the cards that changed and records what it saw. Shown here is the demo workspace.</p><p><a class="link" href="https://jtflow-opsdb.onrender.com/" target="_blank" rel="noopener">Open the demo workspace</a></p></div>
+        <div class="span-6 start-7 stack-3"><p class="muted">Tasks, approvals and clients sit on one board. A scheduled AI agent reads the team chat, moves the cards that changed and records what it saw. Shown here is the demo workspace.</p><p><a class="link" href="https://jtflow-opsdb.onrender.com/" target="_blank" rel="noopener">Open the demo workspace</a></p><p><a class="link" href="ops-dashboard.html">Read the first three weeks</a></p></div>
       </div>
       <div class="ui app fill" role="img" aria-label="An operations board: a list of tasks with owners and statuses beside one open task and its change history" data-ui-pause-host>
         <div class="app__pane app__pane--list">
@@ -365,7 +365,7 @@
         <div class="grid">
           <article class="card card--row span-6">
             <h3>Took over a live seminar build</h3>
-            <p>About two weeks before a law firm's seminar I rebuilt the reminders and added a waitlist. The main workflow ran with no failed steps.</p>
+            <p>About two weeks before a law firm's seminar I rebuilt the reminders and added a waitlist. No step failed in the main workflow. <a class="link" href="seminar.html">Read the seminar build</a></p>
             <div class="panel panel--flush" data-ui-pause-host><div class="stage"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:32px;--ay-sm:24px" data-ui-loop>
               <div class="ui ui-panel ui-pipe" data-ui="pipeline-board">
   <div class="ui-pipe__head">
@@ -415,7 +415,7 @@
       <div class="grid">
           <article class="card card--row span-6">
             <h3>Built a stage gate in GoHighLevel</h3>
-            <p>On a home-services pipeline a job card cannot stay in a late stage while a required field is blank. It goes back and the owner gets a text.</p>
+            <p>On a home-services pipeline a job card cannot stay in a late stage while a required field is blank. It goes back and the owner is texted. <a class="link" href="stage-gate.html">Read the stage gate build</a></p>
             <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:calc(100% - 200px);--ay-sm:calc(100% - 180px)">
               <div class="ui ui-notify" data-ui="notify">
   <ul class="ui-notify__list" data-notify-list>
@@ -440,7 +440,7 @@
         <div class="grid">
           <article class="card card--row span-6">
             <h3>Audited GoHighLevel imports before launch</h3>
-            <p>A snapshot import brings about 130 workflows. Each stays a draft until its links, calendars and alerts point at the new client.</p>
+            <p>A snapshot import brings about 130 workflows. Each stays a draft until its links, calendars and alerts point at the new client. <a class="link" href="import-audit.html">Read the import audit</a></p>
             <div class="panel panel--flush"><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:calc(100% - 230px);--ay-sm:calc(100% - 200px)">
               <div class="ui ui-panel ui-checks" data-ui="checklist">
   <div class="ui-checks__head">
@@ -465,7 +465,7 @@
       <div class="grid">
           <article class="card card--row span-6">
             <h3>Built a job search system in n8n</h3>
-            <p>Six n8n workflows find roles, score the fit and draft follow-ups. About 765 runs in one November week, 0.5% failed.</p>
+            <p>Six n8n workflows find roles, score the fit and draft follow-ups. About 765 runs in one November week, 0.5% failed. <a class="link" href="job-search-system.html">Read the job search build</a></p>
             <div class="panel panel--flush"><img class="frame__img" src="img/n8n-job-scraper.png" alt="An n8n workflow of 19 nodes that searches for jobs, scores them with AI and posts the best to Slack" loading="lazy" width="898" height="640"></div>
           </article>
       </div>
